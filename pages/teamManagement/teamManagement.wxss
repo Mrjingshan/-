@@ -1,0 +1,102 @@
+.container {
+  background: #fff;
+}
+
+.head {
+  width: 100%;
+  height: 80rpx;
+  background: #f5f5f5;
+}
+
+.head>view {
+  display: inline-block;
+  margin-left: 34rpx;
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.head>view>text {
+  color: #e61f29;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin: 0 8rpx;
+}
+
+.teamLi {
+  margin: 0 auto 0;
+  width: 710rpx;
+  height: 215rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.teamLiLeft {
+  width: 50%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.teamLiLeft>image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+  margin-top: 40rpx;
+  float: left;
+  box-shadow: 0 1rpx 3rpx 0 rgba(0, 0, 0, 0.25);
+}
+
+.teamLiLeft .info {
+  display: inline-block;
+  width: 200rpx;
+  height: 100%;
+  float: right;
+}
+
+.tip {
+  width: 100%;
+  margin-top: 54rpx;
+}
+
+.tip>text {
+  display: inline-block;
+  width: 148rpx;
+  height: 38rpx;
+  text-align: center;
+  line-height: 38rpx;
+  background: #e61f29;
+  border-radius: 100rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.name {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 18rpx;
+}
+
+.teamLiRight {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+
+.teamLiRight>view {
+  height: 50rpx;
+  /* line-height: 50rpx; */
+  font-size: 28rpx;
+  color: #333;
+}
+.teamLiRight>view>text{
+  color: #E61F29;
+}

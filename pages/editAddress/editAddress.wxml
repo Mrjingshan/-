@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="addressCon bgFFF">
+    <view class="addressConLi">
+      <input type="text" bindinput="addressName" value="{{username}}" maxlength='10' placeholder='收货人姓名' placeholder-style="font-size: 26rpx; color: #999999;"></input>
+    </view>
+    <view class="addressConLi">
+      <input type="number" bindinput="addressPhoneNumber" value="{{userphone}}" maxlength='11' placeholder='联系电话' placeholder-style="font-size: 26rpx; color: #999999;"></input>
+    </view>
+    <view class="addressConLi addressChoose">
+      <text class="chooseTitle">所在地区</text>
+      <picker class="chooseName" bindchange="changeRegin" mode="region">
+        <view class="tui-picker-detail" wx:if="{{region[0]==region[1]}}">{{region[0]}}{{region[2]}}</view>
+        <view class="tui-picker-detail" wx:if="{{region[0]!=region[1]}}">{{region[0]}}{{region[1]}}{{region[2]}}</view>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </picker>
+    </view>
+    <view class="addressConLi addressArea">
+      <textarea bindinput="addressDetails" value="{{addressDetails}}" placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元室等" placeholder-style="font-size: 26rpx; color: #999999;" />
+    </view>
+  </view>
+  <view class="addressBtn" catchtap='addressSave'>保存</view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

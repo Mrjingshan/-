@@ -1,0 +1,164 @@
+page{
+  background: #F5F5F5;
+}
+.address_scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 96rpx;
+}
+
+.addresslist {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.addressli {
+  width: 630rpx;
+  overflow: hidden;
+  padding: 20rpx 30rpx 0;
+  background: #fff;
+  border-radius: 26rpx;
+  margin: 0 auto 20rpx;
+}
+.addressli:first-child{
+  margin-top: 30rpx;
+}
+.addressli:last-child {
+  border-bottom: 0;
+}
+
+.li_title {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 18rpx;
+}
+
+.li_title text {
+  margin-left: 30rpx;
+}
+
+.li_address_details {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 16rpx;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.li_left {
+  width: 10%;
+  float: left;
+}
+
+.li_left image {
+  display: inline-block;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.li_left image.leftlocation {
+  width: 36rpx;
+  margin-left: 10rpx;
+}
+
+.li_right {
+  width: 89%;
+  float: right;
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #333;
+}
+
+.li_address_options {
+  overflow: hidden;
+  height: 72rpx;
+}
+
+.options_left {
+  width: 40%;
+  float: left;
+  font-size: 30rpx;
+  color: #666;
+  vertical-align: middle;
+  line-height: 72rpx;
+  position: relative;
+  padding-left: 40rpx;
+}
+
+.options_right {
+  width: 49%;
+  float: right;
+}
+
+.orblock {
+  width: 48%;
+  display: inline-block;
+  line-height: 72rpx;
+  vertical-align: middle;
+  text-align: center;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.orblock image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  display: inline-block;
+  margin: -8rpx 5rpx 0 0;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 22rpx;
+  height: 22rpx;
+  text-align: center;
+  font-size: 0rpx; /* 对勾大小 去掉 */
+  background-color: #fa3841;
+  border: none;
+  transform: translate(-50%, -50%) scale(1.25);
+  -webkit-transform: translate(-50%, -50%) scale(1.25);
+}
+
+radio {
+  border-radius: 50%;
+  width: 22rpx; /* 最好是4的倍数，不然会不在中间 */
+  height: 22rpx;
+  font-size: 0; /* 让边框重合 */
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 1rpx;
+}
+
+radio .wx-radio-input {
+  border-radius: 50%;
+  width: 22rpx;
+  height: 22rpx;
+  background: #ededed;
+  border: 1rpx solid #979797; /* 替换边框（隐藏原有边框） */
+}
+.addnewaddress{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 95rpx;
+  line-height: 95rpx;
+  text-align: center;
+  vertical-align: middle;
+  color: #ffffff;
+  font-size: 34rpx;
+  background-image: linear-gradient(-90deg, #E51A24 100%, #F9AC4C  100%);
+}
+.addnewaddress image{
+  width: 30rpx;
+  height: 30rpx;
+  vertical-align: middle;
+  margin-right: 15rpx;
+}

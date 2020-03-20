@@ -1,0 +1,109 @@
+<view class="container">
+  <movable-area class="movableContent">
+  <!-- 个人中心头部开始 -->
+  <view class="mineHead">
+    <image src="http://wjdh.yccjb.com/mineBg.png" mode="aspecFit"></image>
+    <view class="minePicture">
+      <image src="{{userInfo.avatarUrl}}" mode="aspecFit"></image>
+    </view>
+    <view class="mineName">{{userInfo.nickName}}</view>
+  </view>
+  <!-- 个人中心头部结束 -->
+  <!-- 我的订单开始 -->
+  <view class="mineOrder bgFFF" catchtap='goAllOrders'>
+    <view class="width92">
+      <view class="moLeft">我的订单</view>
+      <view class="moRight">查看全部订单
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 我的订单结束 -->
+  <!-- 订单状态开始 -->
+  <view class="mineOrderOptions bgFFF">
+    <view class="width92">
+      <view class="orderLi" catchtap='goAllOrders1'>
+        <image src="http://wjdh.yccjb.com/daifukuan.png" mode="aspecFit"></image>
+        <text>待付款</text>
+      </view>
+      <view class="orderLi" catchtap='goAllOrders2'>
+        <image src="http://wjdh.yccjb.com/daifahuo.png" mode="aspecFit"></image>
+        <text>待发货</text>
+      </view>
+      <view class="orderLi" catchtap='goAllOrders3'>
+        <image src="http://wjdh.yccjb.com/daishouhuo.png" mode="aspecFit"></image>
+        <text>待收货</text>
+      </view>
+      <view class="orderLi" catchtap='goAllOrders4'>
+        <image src="http://wjdh.yccjb.com/yiwancheng.png" mode="aspecFit"></image>
+        <text>已完成</text>
+      </view>
+    </view>
+  </view>
+  <!--订单状态结束 -->
+  <view class="mineMenu bgFFF">
+    <view class="mineMenuLi" catchtap='addressList'>
+      <view class="width92">
+        <text>收货地址管理</text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class="mineMenuLi" catchtap='customized' wx:if="{{phoneFlag==1}}">
+      <view class="width92">
+        <text>高端定制订单</text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class="mineMenuLi" wx:if="{{phoneFlag==0}}">
+      <button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">
+        高端定制订单<image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </button>
+    </view>
+    <view class="mineMenuLi" catchtap='goPartner' wx:if="{{userInfo.is_saleman==3}}">
+      <view class="width92">
+        <text>我是艺术合伙人</text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class="mineMenuLi" catchtap='goAgent' wx:if="{{userInfo.is_saleman==2}}">
+      <!-- -->
+      <view class="width92">
+        <text>我是艺术代理商</text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class="mineMenuLi" catchtap='goFavorites'>
+      <view class="width92">
+        <text>收藏夹</text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class="mineMenuLi" catchtap='aboutUs'>
+      <view class="width92">
+        <text>关于我们</text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class="mineMenuLi" catchtap='message'>
+      <view class="width92">
+        <text>我的消息<text class="dot" wx:if="{{messageBool}}"></text></text>
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+  </view>
+  <movable-view class="serviceContent" direction="all">
+      <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+        <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+      </button>
+    </movable-view>
+  </movable-area>
+</view>
+<!-- <view class='serviceContent' style="top:45%;">
+  <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+    <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+  </button>
+</view> -->
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="head">
+    <view class="headContent">
+      <view class="headItem {{chooseId==index?'active':''}}" wx:for="{{itemData}}" wx:key="{{index}}" catchtap='itemChoose' data-index="{{index}}">{{item.name}}</view>
+    </view>
+  </view>
+  <!-- 列表开始 -->
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" class="incomeList">
+    <view class="incomeLi" wx:for="{{listData}}" wx:key="{{index}}">
+      <view class="incomeLiLeft">
+        <view class="incomeName" wx:if="{{item.type == '1'}}">直接销售</view>
+        <view class="incomeName" wx:if="{{item.type == '2'}}">团队销售</view>
+        <view class="incomeDate">{{item.create_time}}</view>
+      </view>
+      <view class="incomeLiRight">{{item.amount}}元</view>
+    </view>
+  </scroll-view>
+  <!-- 列表结束 -->
+</view>

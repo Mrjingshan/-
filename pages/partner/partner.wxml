@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="box_top">
+    <view class="box_bg">
+      <image src="http://wjdh.yccjb.com/boxBg.png" mode="aspecFit"></image>
+      <view class="boxContent">
+        <image class="headerImg" src="{{userInfo.avatarUrl}}" mode="aspecFit"></image>
+        <view class="contentRight">
+          <view class="name">{{userInfo.nickName}}</view>
+          <view class="identity">
+            <text>艺术合伙人</text>
+          </view>
+          <view class="chooseTab">
+            <view class="orderText" catchtap='goTeam'>
+              <text class="tab1">团队管理</text>
+              <text class="tab2" wx:if="{{partnerData.num}}">{{partnerData.num}}</text>
+              <text class="tab2" wx:else>0</text>
+            </view>
+            <view class="controlText" catchtap='goAllOrders'>查看全部订单
+              <image class="icon" src="http://wjdh.yccjb.com/whiteIcon.png" mode="aspecFit" style="float:right;"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="box_show">
+        <view class="title">本月销售额</view>
+        <view class="totalPrice" wx:if="{{partnerData.monthOrderTotal}}">{{partnerData.monthOrderTotal}}</view>
+        <view class="totalPrice" wx:else>0.00</view>
+        <view class="lineBar"></view>
+        <view class="bars">
+          <view class="barsItem">
+            <view class="title">今日订单</view>
+            <view class="count" wx:if="{{partnerData.todayOrderNum}}">{{partnerData.todayOrderNum}}</view>
+            <view class="count" wx:else>0</view>
+          </view>
+          <view class="barsItem">
+            <view class="title">今日销售额</view>
+            <view class="count" wx:if="{{partnerData.todayOrderTotal}}">{{partnerData.todayOrderTotal}}</view>
+            <view class="count" wx:else>0.00</view>
+          </view>
+          <view class="barsItem" catchtap='goIncome'>
+            <view class="title">累计收益</view>
+            <view class="count" wx:if="{{partnerData.incomeTotal}}">{{partnerData.incomeTotal}}</view>
+            <view class="count" wx:else>0.00</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 素材开始 -->
+  <view class="imageItem" style="margin-top:40rpx;" catchtap='goPartnerCode1'>
+    <image class="icon" src="http://wjdh.yccjb.com/image1.png" mode="aspecFit" style="float:right;"></image>
+  </view>
+  <view class="imageItem" style="margin-top:20rpx;" catchtap='goPartnerCode2'>
+    <image class="icon" src="http://wjdh.yccjb.com/image2.png" mode="aspecFit" style="float:right;"></image>
+  </view>
+  <!-- 素材结束 -->
+  <view class="itemView">
+    <view catchtap='goActivity'>
+      <text>活动素材</text>
+      <image class="icon" src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit" style="float:right;"></image>
+    </view>
+    <view catchtap='goRules'>
+      <text>佣金规则</text>
+      <image class="icon" src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit" style="float:right;"></image>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

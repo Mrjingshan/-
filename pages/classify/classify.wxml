@@ -1,0 +1,38 @@
+<view class="boxContent">
+  <movable-area class="movableContent">
+  <scroll-view scroll-x="true" class="nav" scroll-with-animation="{{true}}">
+    <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="nav-item {{currentTab == idx ?'active':''}}" data-item="{{navItem}}" data-current="{{idx}}" bindtap="switchNav">
+        <text>{{navItem.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y="true" scroll-top='{{topNum}}' class="classifyContent">
+    <view class="classify-box">
+      <view class="content-item" wx:for="{{productData}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" bindtap='godetailsList' data-index="{{tabItem.g_id}}">
+        <view class="content-item-con">
+          <image src='{{tabItem.img_url}}' mode='widthFix' lazy-load="true"></image>
+          <view class='c-item-con-footer'>
+            <view class="footer-name">{{tabItem.g_name}}
+            </view>
+            <view class="footer-price">¥<text>{{tabItem.price}}</text>
+              <!-- <image src='http://wjdh.yccjb.com/addCarSort.png'></image> -->
+              <!-- <image src='/images/car1.png'></image> -->
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <movable-view class="serviceContent" direction="all">
+      <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+        <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+      </button>
+    </movable-view>
+  </movable-area>
+</view>
+<!-- <view class='serviceContent'>
+  <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+    <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+  </button>
+</view> -->

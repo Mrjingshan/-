@@ -1,0 +1,128 @@
+/* pages/search/search.wxss */
+page{
+  background: #fff;
+}
+.search_box{
+  width: 100%;
+}
+.search_top{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #fff;
+  display: flex;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.search_top_left{
+  width: 592rpx;
+  height: 56rpx;
+  display: flex;
+  background: #F5F5F5;
+  border: 1rpx solid #E6E6EA;
+  border-radius: 4px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx;
+}
+.search_top_left_img{
+  width: 30rpx;
+  height: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search_top_left_img image{
+  width: 100%;
+  height: 100%;
+}
+.search_top_left_ipt{
+  flex-grow: 1;
+  font-size: 14px;
+  color: #B2B2B2;
+  margin-left: 20rpx;
+}
+.search_top_right{
+  width: 96rpx;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-132deg, #F9673D 0%, #E51A24 100%);
+  border-radius: 4px;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-left: 20rpx;
+}
+.search_title{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search_title view:nth-child(1){
+  font-size: 16px;
+  color: #999999;
+}
+.search_title view:nth-child(2){
+  font-size: 16px;
+  color: #333333;
+}
+.history_box{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx 20rpx 0rpx;
+  margin-top: -20rpx;
+}
+.history_box_li{
+  width: auto;
+  height: 62rpx;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #F1F1F1;
+  border-radius: 23rpx;
+  font-size: 15px;
+  color: #666666;
+  margin-left: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.alert_msg{
+  width: 358rpx;
+  height: 180rpx;
+  opacity: 0.61;
+  background: #000000;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  margin-left: -179rpx;
+  top: 30%;
+}
+.alert_msg_imgs{
+  width: 62rpx;
+  height: 62rpx;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.alert_msg_imgs image{
+  width: 100%;
+  height: 100%;
+}
+.alert_msg_text{
+  font-size: 15px;
+  color: #FFFFFF;
+  margin-top: 20rpx;
+}

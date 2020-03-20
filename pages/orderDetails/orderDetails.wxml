@@ -1,0 +1,219 @@
+<view class="container">
+  <!-- 待付款开始 -->
+  <view class="daifukuan" wx:if="{{orderOjb.order_info.is_state==1}}">
+    <view class="head">
+      <text>订单号：{{orderOjb.order_info.id}}</text>
+      <text class="dateText" wx:if="{{min>0}}">支付剩余{{min}}分钟</text>
+      <text class="dateText" wx:if="{{min<=0}}">已超订单支付时间</text>
+      <image class="liTime" src="http://wjdh.yccjb.com/timeIcon.png" mode='aspectFit'></image>
+    </view>
+    <view class="orderTime">下单时间：{{orderOjb.order_info.create_time}}</view>
+    <view class="orderState">订单状态：
+      <text>待付款</text>
+    </view>
+    <view class="orders">
+      <view class="orderLi" wx:for="{{orderOjb.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}" catchtap='goProductDeatils' data-goodsId="{{subItem.goods_id}}">
+        <view class="orderImgParent">
+          <image class="orderImg" style="background:#f5f5f5;" mode='aspectFit' src="{{subItem.goods_icon}}"></image>
+        </view>
+        <view class="orderInfo">
+          <view class="infoName">{{subItem.goods_name}}</view>
+          <view class="infoSpec">{{subItem.goods_attr_name}}</view>
+          <view class="infoOther">
+            <text class="price">¥{{subItem.goods_price}}</text>
+            <text class="count">x{{subItem.goods_size}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="spaceBar"></view>
+    <view class="userInfo">
+      <view>收货人：{{orderOjb.order_info.linkman_name}}</view>
+      <view>联系电话：{{orderOjb.order_info.linkman_phone}}</view>
+      <view class="userAddress">收货地址：
+        <view>{{orderOjb.order_info.linkman_address}}</view>
+      </view>
+      <!-- <view>配送方式：{{orderOjb.order_info.express_company}}</view> -->
+    </view>
+    <view class="spaceBar"></view>
+    <view class="totalPrice">
+      <view class="totalpice">总价：￥{{orderOjb.order_info.total}}</view>
+      <view class="options">
+        <text class="defaultBtn" catchtap='cancelOrder'>取消订单</text>
+        <text class="redBtn" style="margin-left: 20rpx;" catchtap='payOrder' wx:if="{{min>0}}">立即支付</text>
+      </view>
+    </view>
+  </view>
+  <!-- 待付款结束 -->
+  <!-- 待收货开始 -->
+  <view class="daishouhuo" wx:if="{{orderOjb.order_info.is_state==3}}">
+    <view class="head">订单号：{{orderOjb.order_info.id}}</view>
+    <view class="content">
+      <view style="margin-top:20rpx;">下单时间：{{orderOjb.order_info.create_time}}</view>
+      <view>快递公司：{{orderOjb.order_info.express_company}}</view>
+      <view>快递单号：{{orderOjb.order_info.express_number}}
+        <text catchtap='copyOrderId' data-id="{{orderOjb.order_info.id}}">点击复制快递单号</text>
+      </view>
+      <view class="states">订单状态：
+        <text>平台已发货</text>
+      </view>
+      <view class="states">总价：￥{{orderOjb.order_info.total}}</view>
+      <!-- 商品展示开始 -->
+      <view class="orders">
+        <view class="ordersLi" wx:for="{{orderOjb.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}" catchtap='goProductDeatils' data-goodsId="{{subItem.goods_id}}">
+          <view class="orderImgParent">
+            <image class="orderImg" style="background:#f5f5f5;" src="{{subItem.goods_icon}}" mode='aspectFit'></image>
+          </view>
+          <view class="orderInfo">
+            <view class="infoName">{{subItem.goods_name}}</view>
+            <view class="infoSpec">{{subItem.goods_attr_name}}</view>
+            <view class="infoOther">
+              <text class="price">¥{{subItem.goods_price}}</text>
+              <text class="count">x{{subItem.goods_size}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 商品展示结束 -->
+    </view>
+    <view class="spaceBar"></view>
+    <view class="userInfo">
+      <view>收货人：{{orderOjb.order_info.linkman_name}}</view>
+      <view>联系电话：{{orderOjb.order_info.linkman_phone}}</view>
+      <view class="userAddress">收货地址：
+        <view>{{orderOjb.order_info.linkman_address}}</view>
+      </view>
+      <view>配送方式：{{orderOjb.order_info.express_company}}</view>
+    </view>
+    <view class="spaceBar"></view>
+    <view class="totalPrice" style="padding-bottom:30rpx;">
+      <view class="options">
+        <text class="defaultBtn" bindtap='gokuaidi'>物流查询</text>
+        <text class="redBtn" style="margin-left: 20rpx;" catchtap='confirmReceipt'>确认收货</text>
+      </view>
+    </view>
+  </view>
+  <!-- 待收货结束 -->
+  <!-- 待发货开始 -->
+  <view class="daifahuo" wx:if="{{orderOjb.order_info.is_state==2}}">
+    <view class="head">订单号：{{orderOjb.order_info.id}}</view>
+    <view class="content">
+      <view style="margin-top:20rpx;">下单时间：{{orderOjb.order_info.create_time}}</view>
+      <view class="states">订单状态：
+        <text>等待平台发货</text>
+      </view>
+      <view class="states">总价：￥{{orderOjb.order_info.total}}</view>
+      <!-- 商品展示开始 -->
+      <view class="orders">
+        <view class="ordersLi" wx:for="{{orderOjb.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}" catchtap='goProductDeatils' data-goodsId="{{subItem.goods_id}}">
+          <view class="orderImgParent">
+            <image class="orderImg" style='background:#f5f5f5;' src="{{subItem.goods_icon}}" mode='aspectFit'></image>
+          </view>
+          <view class="orderInfo">
+            <view class="infoName">{{subItem.goods_name}}</view>
+            <view class="infoSpec">{{subItem.goods_attr_name}}</view>
+            <view class="infoOther">
+              <text class="price">¥{{subItem.goods_price}}</text>
+              <text class="count">x{{subItem.goods_size}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 商品展示结束 -->
+    </view>
+    <view class="spaceBar"></view>
+    <view class="userInfo">
+      <view>收货人：{{orderOjb.order_info.linkman_name}}</view>
+      <view>联系电话：{{orderOjb.order_info.linkman_phone}}</view>
+      <view class="userAddress">收货地址：
+        <view>{{orderOjb.order_info.linkman_address}}</view>
+      </view>
+      <!-- <view>配送方式：{{orderOjb.order_info.express_company}}</view> -->
+    </view>
+  </view>
+  <!-- 待发货结束 -->
+  <!-- 已签收开始 -->
+  <view class="yiqianshou" wx:if="{{orderOjb.order_info.is_state==4}}">
+    <view class="head">订单号：{{orderOjb.order_info.id}}</view>
+    <view class="content">
+      <view style="margin-top:20rpx;">下单时间：{{orderOjb.order_info.create_time}}</view>
+      <view class="states">订单状态：已签收</view>
+      <view class="states btnline">总价：￥{{orderOjb.order_info.total}}
+        <text class="returnBtn" catchtap='payOrderAgain' data-goods="{{orderOjb.order_goods}}">再次购买</text>
+      </view>
+      <!-- 商品展示开始 -->
+      <view class="orders">
+        <view class="ordersLi" wx:for="{{orderOjb.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}" catchtap='goProductDeatils' data-goodsId="{{subItem.goods_id}}">
+          <view class="orderImgParent">
+            <image class="orderImg" style="background:#f5f5f5;" src="{{subItem.goods_icon}}" mode='aspectFit'></image>
+          </view>
+          <view class="orderInfo">
+            <view class="infoName">{{subItem.goods_name}}</view>
+            <view class="infoSpec">{{subItem.goods_attr_name}}</view>
+            <view class="infoOther">
+              <text class="price">¥{{subItem.goods_price}}</text>
+              <text class="count">x{{subItem.goods_size}}</text>
+            </view>
+          </view>
+          <view class="sourceLine">
+            作品溯源码：{{subItem.goods_code}}<text data-goodscode="{{subItem.goods_code}}" class="count" catchtap='goodsSourceSearch' data-orderid="{{orderOjb.order_info.id}}">点击查询</text>
+          </view>
+        </view>
+      </view>
+      <!-- 商品展示结束 -->
+    </view>
+    <view class="spaceBar"></view>
+    <view class="userInfo">
+      <view>收货人：{{orderOjb.order_info.linkman_name}}</view>
+      <view>联系电话：{{orderOjb.order_info.linkman_phone}}</view>
+      <view class="userAddress">收货地址：
+        <view>{{orderOjb.order_info.linkman_address}}</view>
+      </view>
+      <view>配送方式：{{orderOjb.order_info.express_company}}</view>
+    </view>
+  </view>
+  <!-- 已签收结束 -->
+  <!-- 取消订单开始 -->
+  <view class="daifukuan" wx:if="{{orderOjb.order_info.is_state==5}}">
+    <view class="head">
+      <text>订单号：{{orderOjb.order_info.id}}</text>
+      <text class="dateText" catchtap='deleteOrder'>删除订单</text>
+    </view>
+    <view class="orderTime">下单时间：{{orderOjb.order_info.create_time}}</view>
+    <view class="orderState">订单状态：
+      <text>已取消</text>
+    </view>
+    <view class="orders">
+      <view class="orderLi" wx:for="{{orderOjb.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}" catchtap='goProductDeatils' data-goodsId="{{subItem.goods_id}}">
+        <view class="orderImgParent">
+          <image class="orderImg" style="background:#f5f5f5;" mode='aspectFit' src="{{subItem.goods_icon}}"></image>
+        </view>
+        <view class="orderInfo">
+          <view class="infoName">{{subItem.goods_name}}</view>
+          <view class="infoSpec">{{subItem.goods_attr_name}}</view>
+          <view class="infoOther">
+            <text class="price">¥{{subItem.goods_price}}</text>
+            <text class="count">x{{subItem.goods_size}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="spaceBar"></view>
+    <view class="userInfo">
+      <view>收货人：{{orderOjb.order_info.linkman_name}}</view>
+      <view>联系电话：{{orderOjb.order_info.linkman_phone}}</view>
+      <view class="userAddress">收货地址：
+        <view>{{orderOjb.order_info.linkman_address}}</view>
+      </view>
+      <!-- <view>配送方式：{{orderOjb.order_info.express_company}}</view> -->
+    </view>
+  </view>
+  <!-- 取消订单结束 -->
+</view>
+<view class="loginMsg" wx:if="{{confirmState}}">
+  <view class="tip">{{confirmTitle}}</view>
+  <view class="btnLine">
+    <text class="default">取消</text>
+    <text class="whiteStyle">确定</text>
+  </view>
+</view>

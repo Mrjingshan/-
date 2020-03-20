@@ -1,0 +1,353 @@
+.container {
+  background: #fff;
+}
+
+/* 待付款CSS */
+
+.daifukuan {
+  width: 100%;
+}
+
+.daifukuan .head {
+  width: 690rpx;
+  height: 80rpx;
+  margin: 0 auto 0;
+  line-height: 80rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+.daifukuan .head text {
+  font-size: 28rpx;
+  color: #666;
+  float: left;
+}
+
+.daifukuan .head text.dateText {
+  font-size: 28rpx;
+  color: #999;
+  float: right;
+}
+
+.daifukuan .head .liTime {
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin: 25rpx 8rpx 0 0;
+}
+
+.daifukuan .orderTime {
+  width: 690rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+  margin: 20rpx auto 0;
+}
+
+.daifukuan .orderState {
+  width: 690rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+  margin: 10rpx auto 10rpx;
+}
+
+.daifukuan .orderState text {
+  color: #e51a24;
+}
+
+.daifukuan .orders {
+  width: 690rpx;
+  margin: 0 auto;
+}
+
+.daifukuan .orderLi {
+  overflow: hidden;
+  display: flex;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+.daifukuan .orderLi:last-child {
+  border-bottom: none;
+}
+.daifukuan .orderImgParent{
+  width: 290rpx;
+  height: 200rpx;
+  border-radius: 5px;
+  /* margin: 20rpx 0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* float: left; */
+}
+.daifukuan .orderImg {
+  width: 100%;
+  height: 100%;
+}
+
+.daifukuan .orderInfo {
+  width: 360rpx;
+  height: 200rpx;
+  /* float: right; */
+  margin: 20rpx 0;
+  /* display: flex; */
+  margin-left: 20rpx;
+}
+
+.daifukuan .infoName {
+  width: 100%;
+  font-size: 34rpx;
+  color: #333;
+  line-height: 48rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 10rpx;
+}
+
+.daifukuan .infoSpec {
+  width: 100%;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 20rpx 0 30rpx;
+}
+
+.daifukuan .infoOther {
+  width: 100%;
+  overflow: hidden;
+}
+
+.daifukuan .price {
+  font-size: 28rpx;
+  color: #333;
+  float: left;
+}
+
+.daifukuan .count {
+  font-size: 28rpx;
+  color: #353535;
+  float: right;
+}
+
+.userInfo {
+  width: 690rpx;
+  margin: 0 auto 0;
+  padding-bottom: 20rpx;
+}
+
+.userInfo>view {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 42rpx;
+  margin-top: 20rpx;
+}
+
+.totalpice {
+  width: 690rpx;
+  margin: 20rpx auto 0;
+  font-size: 32rpx;
+  color: #333;
+  text-align: right;
+}
+
+.options {
+  width: 690rpx;
+  margin: 20rpx auto 0;
+  text-align: right;
+}
+
+.options text {
+  width: 188rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 87px;
+  display: inline-block;
+}
+
+.defaultBtn {
+  border: 1rpx solid #e51a24;
+  font-size: 30rpx;
+  color: #e51a24;
+}
+
+.redBtn {
+  background: #e51a24;
+  border: 1px solid #e51a24;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+view.userAddress {
+  width: 100%;
+  overflow: hidden;
+}
+
+view.userAddress>view {
+  display: inline-block;
+  width: 550rpx;
+  height: 80rpx;
+  float: right;
+}
+
+/* 待收货CSS */
+
+.daishouhuo {
+  width: 100%;
+  overflow: hidden;
+}
+
+.head {
+  width: 690rpx;
+  margin: 0 auto 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+.content {
+  width: 690rpx;
+  margin: 0 auto 0;
+}
+
+.content>view {
+  width: 100%;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.content>view>text {
+  color: #333;
+  margin-left: 24rpx;
+}
+
+.content>view.states {
+  color: #333;
+}
+
+.content>view.states>text {
+  color: #e51a24;
+  margin-left: 0;
+}
+
+.orders {
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+
+.ordersLi {
+  width: 100%;
+  overflow: hidden;
+}
+.orderImgParent{
+  width: 290rpx;
+  height: 200rpx;
+  border-radius: 5px;
+  /* float: left; */
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orderImg {
+  width: 100%;
+  height: 100%;
+}
+
+.orderInfo {
+  width: 360rpx;
+  height: 200rpx;
+  /* float: right; */
+  margin: 20rpx 0;
+  /* display: flex; */
+  margin-left: 20rpx;
+}
+
+.infoName {
+  width: 100%;
+  font-size: 34rpx;
+  color: #333;
+  line-height: 48rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 10rpx;
+}
+
+.infoSpec {
+  width: 100%;
+  font-size: 32rpx;
+  color: #999;
+  line-height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 20rpx 0 30rpx;
+}
+
+.infoOther {
+  width: 100%;
+  overflow: hidden;
+}
+
+.price {
+  font-size: 28rpx;
+  color: #333;
+  float: left;
+}
+
+.count {
+  font-size: 28rpx;
+  color: #353535;
+  float: right;
+}
+
+/* 待发货CSS */
+
+.daifahuo {
+  width: 100%;
+}
+
+/* 已签收CSS */
+
+.yiqianshou {
+  width: 100%;
+}
+
+.yiqianshou .content>view.btnline {
+  overflow: hidden;
+  line-height: 60rpx;
+}
+
+.yiqianshou .content>view.btnline>text.returnBtn {
+  width: 188rpx;
+  height: 60rpx;
+  background: #e51a24;
+  border-radius: 87px;
+  font-size: 30rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 60rpx;
+  display: inline-block;
+  float: right;
+}
+
+.sourceLine {
+  width: 100%;
+  line-height: 42rpx;
+  margin-top: 240rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.sourceLine>text {
+  color: #e51a24;
+}

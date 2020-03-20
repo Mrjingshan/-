@@ -1,0 +1,195 @@
+<view class="indexPage {{maskFlag?'':'indexFixed'}}">
+  <movable-area class="movableContent">
+    <view class="viewContent">
+      <scroll-view class='details_box_main'>
+        <view class='details_swiper'>
+          <!-- bindchange="swiperChange"  -->
+          <swiper style='width:100%; height:592rpx;' class="swiper" autoplay="{{true}}" current="{{currentSwiper}}" indicator-dots="true" indicator-active-color="#FFFFFF" indicator-color="#A0A0A0">
+            <block wx:for="{{detailsData.moreimg}}" wx:for-index="index" wx:key="{{index}}">
+              <swiper-item class="{{detailsData.product_color==0?'color0':'color1'}}">
+                <image src="{{item.img_url}}" data-src="{{item.img_url}}" bindtap="previewImage" data-item="{{item}}" class="slide-image" mode="aspectFit" lazy-load="true"></image>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class='details_content'>
+          <view class='details_content_title'>
+            <text>{{detailsData.g_name}}</text>
+            <!-- <text class='details_content_title_name' wx:if="{{detailsData.penname !=''}}">作者：{{detailsData.penname}}</text> -->
+            <!-- <text class='details_content_title_name' wx:else>作者：{{detailsData.p_name}}</text> -->
+          </view>
+          <view class='details_Label'>
+            <view class='details_Label_li' wx:for="{{g_label}}" wx:key="{{index}}">
+              <image src='http://wjdh.yccjb.com/%E6%A0%87%E7%AD%BE@2x.png' lazy-load="true"></image>
+              <view>{{item}}</view>
+            </view>
+          </view>
+          <view class='details_price' style="margin-top:18rpx; height: 56rpx; line-height:56rpx;" wx:if="{{detailsData.market_price==null}}">
+            <text>¥ {{detailsData.price_section}}</text>
+            <text>¥ 0.00</text>
+          </view>
+          <view class='details_price' style="margin-top:18rpx; height: 56rpx; line-height:56rpx;" wx:else>
+            <text>¥ {{detailsData.price_section}}</text>
+            <text>¥ {{detailsData.market_price}}</text>
+          </view>
+        </view>
+        <view class='details_Specifications' bindtap='showFlag' data-index="{{detailsData.g_id}}">
+          <view class='details_Specifications_left'>
+            <text>规格</text>
+            <text>{{str}}</text>
+          </view>
+          <!-- <view class='details_Specifications_right'>
+            <image src='http://wjdh.yccjb.com/moreIcon.png'></image>
+          </view> -->
+        </view>
+        <view class='Painter_details'>
+          <!-- <view class='Painter_details_img'>
+            <image src='http://wjdh.yccjb.com/icon@2x.png'></image>
+          </view> -->
+          <view class='Painter_details_title'>《 {{detailsData.product_name}} 》</view>
+          <view class='Painter_details_text'>
+            <text wx:if="{{detailsData.g_cate == 1}}">{{detailsData.p_name}}  {{detailsData.p_label}}  原创油画</text>
+            <text wx:if="{{detailsData.g_cate == 2}}">{{detailsData.p_name}}  {{detailsData.p_label}}  定制油画</text>
+            <text wx:if="{{detailsData.g_cate == 3}}">{{detailsData.p_name}}  {{detailsData.p_label}}  国画山水</text>
+            <text wx:if="{{detailsData.g_cate == 4}}">{{detailsData.p_name}}  {{detailsData.p_label}}  国画人物</text>
+            <text wx:if="{{detailsData.g_cate == 5}}">{{detailsData.p_name}}  {{detailsData.p_label}}  国画花鸟</text>
+          </view>
+          <view class="shapeContent">
+            <image src='http://wjdh.yccjb.com/shape.png' mode='aspectFit' lazy-load="true"></image>
+          </view>
+          <!-- <view class='Painter_details_type'>
+            <view class='Painter_details_type_top'>
+              <view class='leixing' wx:if="{{detailsData.g_cate==1}}">作品类型：私人订制</view>
+              <view class='leixing' wx:else>作品类型：原创作品</view>
+              <view class='chicun'>
+                <view>带框尺寸：</view>
+                <view>{{detailsData.frame_size}}</view>
+              </view>
+            </view>
+            <view class='Painter_details_type_bottom'>
+              <view>适配风格：{{detailsData.style}}</view>
+              <view>适配空间：{{detailsData.space}}</view>
+            </view>
+          </view> -->
+          <view class='Painter_details_banner'>
+            <!-- <image style='box-sizing: border-box;padding: 0rpx 10rpx;' src='{{detailsData.desc_img}}' title="作品整体描述" mode="widthFix"></image> -->
+            <image src='{{detailsData.artists_img}}' title="艺术家说" mode="widthFix" style="margin-bottom:20rpx" lazy-load="true"></image>
+            <image src='{{detailsData.scene_img}}' title="场景展示" mode="widthFix" style="margin-bottom:20rpx" lazy-load="true"></image>
+            <image wx:if='{{detailsData.original_img !== ""}}' src='{{detailsData.original_img}}' title="关于原作" mode="widthFix" lazy-load="true"></image>
+            <!-- <image wx:if='{{detailsData.background_img !== ""}}' src='{{detailsData.background_img}}' title="创作背景" mode="widthFix"></image> -->
+            <image src='{{detailsData.details_img}}' title="作品细节" mode="widthFix" style="margin-bottom:20rpx" lazy-load="true"></image>
+            <image src='{{detailsData.author_img}}' title="艺术家简介" mode="widthFix" style="margin-bottom:20rpx" lazy-load="true"></image>
+            <image src='{{detailsData.mission_img}}' title="我们的使命" mode="widthFix" lazy-load="true"></image>
+            <image src='{{detailsData.fidelity_img}}' title="关于作品保真" mode="widthFix" style="margin-bottom:20rpx" lazy-load="true"></image>
+            <image src='{{detailsData.spec_img}}' title="作品规格" mode="widthFix" style="margin-bottom:20rpx"></image>
+            <image src='{{detailsData.frame_img}}' title="关于画框图片" mode="widthFix" lazy-load="true"></image>
+            <image src='{{detailsData.install_img}}' title="关于安装图片" mode="widthFix" lazy-load="true"></image>
+            <image src='{{detailsData.shopping_tips_img}}' title="关于购物须知" mode="widthFix" lazy-load="true"></image>
+          </view>
+        </view>
+        <view class='Popular_recommendation'>
+          <view class='Popular_recommendation_title'>
+            <image src='http://wjdh.yccjb.com/rmtj.png'></image>
+          </view>
+          <view class='onbox_tabshow'>
+            <view class='tabbox' wx:for="{{detailsData.goods}}" wx:key="{{index}}" catchtap='goProductDetails' data-item="{{item}}">
+              <view class="tabboxImg {{item.product_color==0?'color0':'color1'}}">
+                <image mode='aspectFit' src='{{item.img_url}}' lazy-load='true'></image>
+              </view>
+              <view class="tabboxText">
+                <view class='tabbox_title'>{{item.g_name}}</view>
+                <!-- <view class='tabbox_titletwo'>{{item.sub_title}}</view> -->
+                <view class='tabbox_price'>¥{{item.price}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='details_footer'>
+      <view class='collection_btn' bindtap='goIndexs' wx:if="{{goIndex}}">
+        <!-- <image src='http://wjdh.yccjb.com/backHome2.png'></image> -->
+        <image src='http://wjdh.yccjb.com/shareHome.png' lazy-load="true"></image>
+        <view>首页</view>
+      </view>
+      <view class='collection_btn' bindtap='saveCollect'>
+        <image src='{{shoucang}}' lazy-load="true"></image>
+        <view>收藏</view>
+      </view>
+      <button class='share_btn' open-type='share' hover-class='none'>
+        <image src='http://wjdh.yccjb.com/share34.png' lazy-load="true"></image>
+        <view>分享</view>
+      </button>
+      <view class='addcart_btn' bindtap='showFlag' data-index="{{detailsData.g_id}}" data-status="{{1}}">
+        <view>加入购物车</view>
+      </view>
+      <view class='purchase_btn' bindtap='showFlag' data-index="{{detailsData.g_id}}" data-status="{{2}}">
+        <view>立即购买</view>
+      </view>
+    </view>
+    <movable-view class="serviceContent" direction="all">
+      <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+        <image src='http://wjdh.yccjb.com/kfnew.png' lazy-load="true"></image>
+      </button>
+    </movable-view>
+  </movable-area>
+</view>
+<view class='mask' hidden='{{maskFlag}}' bindtap='hideFlag'></view>
+<view class='alert' hidden='{{maskFlag}}'>
+  <view class='alert_close' bindtap='hideFlag'>
+    <image src='http://wjdh.yccjb.com/newError.png' lazy-load="true"></image>
+  </view>
+  <view class='alert_msg' hidden='{{addcarFlag}}'>
+    <view class='alert_msg_imgs'>
+      <image src='{{imgurl_tishi}}' lazy-load="true"></image>
+    </view>
+    <view class='alert_msg_text'>{{alert_msg}}</view>
+  </view>
+  <view class='alert_top'>
+    <view class='alert_top_img'>
+      <image src='{{carList.attr[0].icon}}' mode='aspectFit' wx:if="{{specialFlag==1}}" lazy-load="true"></image>
+      <image src='{{carList.img_url}}' mode='aspectFit' wx:else lazy-load="true"></image>
+    </view>
+    <view class='alert_top_content'>
+      <view class='alert_top_content_price'>
+        <text>¥</text>
+        <text>{{carList.price}}</text>
+        <!-- <text wx:else>{{price}}</text> -->
+      </view>
+      <view class='alert_top_content_num'>库存 {{Stock}}</view>
+      <view class='alert_top_content_type'>{{str}}</view>
+    </view>
+  </view>
+  <view class='alert_center'>
+    <view class='alert_center_title'>尺寸</view>
+    <view class='{{chicunIndex==index?"alert_center_type":"alert_center_types"}}' wx:for="{{sizeType}}" wx:key="{{index}}" bindtap='tabclick' data-index='{{index}}' data-item="{{item}}">{{item}}</view>
+  </view>
+  <view class='alert_bottom'>
+    <view class='alert_center_title'>画框颜色</view>
+    <view class='alert_bottom_type'>
+      <view class='{{chicunIndexTow==index?"alert_bottom_types":"alert_bottom_typess"}}' wx:for="{{colorType}}" wx:key="{{index}}" bindtap='tabclickTwo' data-index='{{index}}' data-item="{{item}}">{{item}}</view>
+    </view>
+  </view>
+  <view class='alert_buy'>
+    <view class='alert_buy_left'>购买数量</view>
+    <view class="stepper">
+      <!-- 减号 -->
+      <button class="{{minusStatus}}" bindtap="bindMinus">-</button>
+      <!-- 数值 -->
+      <view class='nums'>{{num}}</view>
+      <!-- 加号 -->
+      <button class="{{minusStatusAdd}}" bindtap="bindPlus">+</button>
+    </view>
+  </view>
+  <view class='alert_btn' wx:if="{{switchToastStatus=='0'}}">
+    <button class='bg1' disabled='{{btndisabled}}' bindtap='alertShow' style='background:{{btnclass}}'>加入购物车</button>
+    <button class='bg2' disabled='{{btndisabled}}' bindtap='gopurchase' style='background:{{btnclass1}}'>立即购买</button>
+  </view>
+  <button class="sureBtnNew" disabled='{{btndisabled}}' wx:if="{{switchToastStatus=='1'}}" bindtap='alertShow'>确定</button>
+  <button class="sureBtnNew" disabled='{{btndisabled}}' wx:if="{{switchToastStatus=='2'}}" bindtap='gopurchase'>确定</button>
+</view>
+<!-- <view class='serviceContent'>
+  <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+    <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+  </button>
+</view> -->

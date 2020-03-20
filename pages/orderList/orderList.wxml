@@ -1,0 +1,90 @@
+<view class="container">
+  <view class="nullContent" wx:if="{{orderListShowFlag==2}}">
+    <view class="topBar">
+      <view wx:for="{{barItems}}" wx:key="{{index}}" class="barItem {{index==chooseTabId?'active':''}}" catchtap='switchItem' data-item="{{item}}">{{item.name}}</view>
+    </view>
+    <image src="http://wjdh.yccjb.com/orderNull.png" mode="aspecFit"></image>
+    <view class="nullText">您没有相关订单哦</view>
+    <view class="goIndexBtn" catchtap='goIndexPage'>去首页看看吧</view>
+  </view>
+  <!-- 有数据展示内容 -->
+  <view class="dataContent" wx:if="{{orderListShowFlag==1}}">
+    <view class="dataConHead">
+      <view class="dataConHeadSearch" catchtap='goOrderSearch'>
+        <icon class="searchIcon" size='16' type='search'></icon>
+        <input type="text" class="searchInput" placeholder='请输入商品名称/订单号' placeholder-style='font-size: 28rpx; color: #B2B2B2; line-height=56rpx;'></input>
+        <text class="searchBtn">搜索</text>
+      </view>
+      <view class="topBar" style="margin-top:6rpx;">
+        <view class="barItem {{index==chooseTabId?'active':''}}" wx:for="{{barItems}}" wx:key="{{index}}" catchtap='switchItem' data-item="{{item}}">{{item.name}}</view>
+      </view>
+    </view>
+    <scroll-view class="orderView">
+      <view class="orderLi" wx:for="{{orderData}}" wx:key="{{index}}" data-item="{{item}}" catchtap='goOrderDetails'>
+        <!-- 头部开始 -->
+        <view class="liHead">
+          <text class="liLeft">订单号：{{item.id}}</text>
+          <text class="liRight" wx:if="{{timeData[index].status==1&&timeData[index].min==0}}">已超订单支付时间</text>
+          <text class="liRight" wx:if="{{timeData[index].status==1&&timeData[index].min>0}}">支付剩余{{timeData[index].min}}分钟</text>
+          <text class="liRight" wx:if="{{item.is_state==5}}" catchtap='deleteOrder' data-orderid="{{item.id}}">删除订单</text>
+          <image wx:if="{{item.is_state==1}}" class="liTime" src="http://wjdh.yccjb.com/timeIcon.png" mode="aspecFit"></image>
+        </view>
+        <!-- 第二部分开始 -->
+        <view class="liStates">
+          <view class="listatesLeft">
+            <view>状态：
+              <text wx:if="{{item.is_state==1}}" class="redColor">待付款</text>
+              <text wx:if="{{item.is_state==2}}" class="grayColor">待发货</text>
+              <text wx:if="{{item.is_state==3}}" class="redColor">待收货</text>
+              <text wx:if="{{item.is_state==4}}" class="grayColor">已签收</text>
+              <text wx:if="{{item.is_state==5}}" class="grayColor">已取消</text>
+              <text wx:if="{{item.is_state==6}}" class="grayColor">退款待处理</text>
+              <text wx:if="{{item.is_state==7}}" class="grayColor">退款完成</text>
+              <text wx:if="{{item.is_state==8}}" class="grayColor">退款拒绝</text>
+              <text wx:if="{{item.is_state==9}}" class="grayColor">已删除</text>
+            </view>
+            <view>总价：￥{{item.total}}</view>
+          </view>
+          <view class="listatesRight">
+            <view wx:if="{{item.is_state==1}}">
+              <view wx:if="{{timeData[index].min>0}}">
+                <text catchtap='payOrder' data-orderid="{{item.id}}">立即支付</text>
+                <text catchtap='cancelOrder' data-orderid="{{item.id}}">取消订单</text>
+              </view>
+              <view wx:if="{{timeData[index].min<=0}}" class="nomin">
+                <text catchtap='cancelOrder' data-orderid="{{item.id}}">取消订单</text>
+              </view>
+            </view>
+            <view wx:if="{{item.is_state==2}}"></view>
+            <view wx:if="{{item.is_state==3}}">
+              <text catchtap='confirmReceipt' data-orderid="{{item.id}}">确认收货</text>
+              <text data-item="{{item}}" catchtap='AgoOrderDetails'>物流查询</text>
+            </view>
+            <view wx:if="{{item.is_state==4}}">
+              <text catchtap='payOrderAgain' data-item="{{item}}">再次购买</text>
+              <text data-item="{{item}}" catchtap='goOrderDetails'>查询溯源码</text>
+            </view>
+            <view wx:if="{{item.is_state==5}}"></view>
+          </view>
+        </view>
+        <!-- 第三部分开始 -->
+        <view class="liProduct">
+          <view class="liProductSign" wx:for="{{item.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}" catchtap='goProductDeatils' data-goodsId="{{subItem.goods_id}}">
+            <view class="liProductImgParent">
+              <image class="liProductImg" style="background:#f5f5f5;" src="{{subItem.goods_icon}}" mode='aspectFit'></image>
+            </view>
+            <view class="liProductRight">
+              <view class="liName">{{subItem.goods_name}}</view>
+              <view class="liCount">x{{subItem.goods_size}}</view>
+              <view class="liPrice">¥{{subItem.goods_price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

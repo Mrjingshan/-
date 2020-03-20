@@ -1,0 +1,27 @@
+<view class='person_box'>
+  <scroll-view>
+    <view class='person_box_list' wx:for="{{orderData}}"
+      wx:key="{{orderData}}">
+      <view class='person_box_list_top' catchtap='godetails' data-item="{{item}}">
+        <view class='person_box_list_top_img'>
+          <image src='{{item.headpath}}'></image>
+        </view>
+        <view class='person_box_list_top_msg'>
+          <view class='person_box_list_top_msg_name' wx:if="{{item.penname !=''}}">{{item.penname}}</view>
+          <view class='person_box_list_top_msg_name' wx:else>{{item.name}}</view>
+          <view class='person_box_list_top_msg_text'>
+            {{item.abstract}}
+          </view>
+        </view>
+      </view>
+      <view class='person_box_list_bottom'>
+        <view class='person_box_list_bottom_li' bindtap='godetailsList' data-index="{{item.g_id}}" wx:for="{{item.goods}}" wx:key="{{index}}">
+          <image style='background:#f5f5f5;' mode='aspectFit' src='{{item.img_url}}'></image>
+          <view class='person_box_list_bottom_name'>{{item.g_name}}</view>
+          <view class='person_box_list_bottom_price'>¥{{item.g_price}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<image catchtap='artistListGoIndex' wx:if="{{shareStatus==1}}" class="backHomeImg" src='http://wjdh.yccjb.com/backHome.png' mode="aspecFit"></image>

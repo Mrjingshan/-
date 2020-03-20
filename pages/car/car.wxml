@@ -1,0 +1,178 @@
+<!--pages/car/car.wxml-->
+<view class='car_box' wx:if="{{carlistStatus==0}}">
+  <view class='car_address' wx:if="{{headStatus == 1}}">
+    <image src='http://wjdh.yccjb.com/%E5%9C%B0%E5%9B%BE@2x.png'></image>
+    <view class='address_text'>
+      {{defaultAddress}}
+    </view>
+    <view class='list_btn' bindtap='CarIstration'>
+      商品编辑
+    </view>
+  </view>
+  <view class='car_address_two' wx:elif="{{headStatus == 2}}">
+    <view class='car_address_two_left' bindtap='goaddaddress'>
+      <view>
+        <image src='http://wjdh.yccjb.com/%E5%8A%A0%E5%8F%B7.png'></image>
+      </view>
+      <view>添加收货地址</view>
+    </view>
+    <view class='car_address_two_right' bindtap='CarIstration'>
+      商品编辑
+    </view>
+  </view>
+  <view class='car_address_three' wx:elif="{{headStatus == 3}}">
+    <view></view>
+    <view bindtap='CarDetale'>完成</view>
+  </view>
+  <view class='car_setion'>
+    <view class='car_setion_list' wx:for="{{carList}}" wx:key="{{index}}">
+      <view class='left'>
+        <checkbox bindtap='checkboxChange' data-index="{{index}}" checked='{{item.checked}}'></checkbox>
+      </view>
+      <view class='center' bindtap='AgoDetails' data-item="{{item}}">
+        <image style='background:#f5f5f5;' mode='aspectFit' src='{{item.goods_attr_img}}'></image>
+      </view>
+      <view class='right'>
+        <view class='right_name'>{{item.goods_name}}</view>
+        <view class='right_typemsg' bindtap='TypeClick' data-index='{{item.goods_id}}' data-indexs='{{index}}' data-attrid="{{item.goods_attr_id}}" data-size="{{item.goods_size}}">
+          <view class='right_typemsg_left'>
+            <view class='right_typemsg_cm'>
+              {{item.goods_attr_name}}
+            </view>
+          </view>
+          <view class='right_typemsg_img'>
+            <image src='http://wjdh.yccjb.com/%E4%B8%8B%E6%8B%89@2x.png'></image>
+          </view>
+        </view>
+        <view class='right_price'>
+          <view class='price'>
+            <text>¥</text>
+            <text>{{item.goods_price}}</text>
+          </view>
+          <view class="stepper">
+            <!-- 减号 -->
+            <button class="{{item.minusStatus}}" bindtap="bindMinus" data-index='{{item.attrs_size}}' data-size='{{item.goods_size}}' data-indexs='{{index}}'>-</button>
+            <!-- 数值 -->
+            <view class='nums'>{{item.goods_size}}</view>
+            <!-- 加号 -->
+            <button class="{{item.minusStatusAdd}}" bindtap="bindPlus" data-index='{{item.attrs_size}}' data-size='{{item.goods_size}}' data-indexs='{{index}}'>+</button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='car_footer_two' wx:if="{{headStatus == 3}}">
+    <view class='car_footer_left_left'>
+      <checkbox value="all" bindtap='allclick' checked='{{select_all}}' />
+      <view>全选</view>
+    </view>
+    <view class='car_footer_btn' bindtap='carListdetale'>删除</view>
+  </view>
+  <view class='car_footer' wx:else>
+    <view class='car_footer_left'>
+      <view class='car_footer_left_left'>
+        <checkbox value="all" bindtap='allclick' checked='{{select_all}}' />
+        <view>全选</view>
+      </view>
+      <view class='car_footer_left_right'>
+        <view>总计：</view>
+        <view>
+          <text>¥</text>
+          <text>{{carList_total}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='car_footer_right' bindtap='gobuy'>
+      去结算
+    </view>
+  </view>
+  <view class='mask' hidden='{{maskFlag}}' bindtap='hideFlag'></view>
+  <view class='alert' hidden='{{maskFlag}}'>
+    <view class='alert_close' bindtap='hideFlag'>
+      <image src='http://wjdh.yccjb.com/newError.png'></image>
+    </view>
+    <view class='alert_top'>
+      <view class='alert_top_img'>
+        <image src='{{carlistdetails.icon}}'></image>
+      </view>
+      <view class='alert_top_content'>
+        <view class='alert_top_content_price'>
+          <text>¥</text>
+          <text>{{carlistdetails.attr_price}}</text>
+        </view>
+        <view class='alert_top_content_type'>库存：{{carlistdetails.s_current}}</view>
+        <view class='alert_top_content_type'>{{TyoeArrayid[TypeIndex].str}}</view>
+      </view>
+    </view>
+    <view class='alert_center'>
+      <view class='alert_center_title'>尺寸</view>
+      <view class='{{TyoeArrayid[TypeIndex].size==index?"alert_center_type":"alert_center_types"}}' wx:for="{{sizeType}}" wx:key="{{index}}" bindtap='tabclick' data-index='{{index}}' data-item="{{item}}">{{item}}</view>
+    </view>
+    <view class='alert_bottom'>
+      <view class='alert_center_title'>画框分类</view>
+      <view class='alert_bottom_type'>
+        <view class='{{TyoeArrayid[TypeIndex].color==index?"alert_bottom_types":"alert_bottom_typess"}}' wx:for="{{colorType}}" wx:key="{{index}}" bindtap='tabclickTwo' data-index='{{index}}' data-item="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <view class='alert_btn'>
+      <button bindtap='editCart'>确认</button>
+    </view>
+  </view>
+  <view class='mask' hidden='{{maskFlagChunlian}}' bindtap='hideFlagChunlian'></view>
+  <view class='alert' hidden='{{maskFlagChunlian}}'>
+    <view class='alert_close' bindtap='hideFlagChunlian'>
+      <image src='http://wjdh.yccjb.com/newError.png'></image>
+    </view>
+    <view class='alert_top'>
+      <view class='alert_top_img'>
+        <image src='{{carlistdetails.icon}}'></image>
+      </view>
+      <view class='alert_top_content'>
+        <view class='alert_top_content_price'>
+          <text>¥</text>
+          <text>{{carlistdetails.attr_price}}</text>
+        </view>
+        <view class='alert_top_content_type'>{{TyoeArrayid[TypeIndex].str}}</view>
+      </view>
+    </view>
+    <view class='alert_center' style='border:none'>
+      <view class='alert_center_title'>春联内容</view>
+      <view class='chunlianTypebox'>
+        <view class='{{TyoeArrayid[TypeIndex].size==index?"chunliantype":"chunliantype2"}}' wx:for="{{sizeType}}" wx:key="{{index}}" bindtap='tabclicks' data-index='{{index}}' data-item="{{item}}">{{item}}</view>
+    </view>
+      </view>
+    <view class='alert_btn'>
+      <button bindtap='editCart'>确认</button>
+    </view>
+  </view>
+</view>
+<view class='car_NoData' wx:else>
+  <view class='car_NoData_top'>
+    <view>
+      <image src='http://wjdh.yccjb.com/%E8%B4%AD%E7%89%A9%E8%BD%A6@2x.png'></image>
+    </view>
+    <view class='text'>购物车是空的哦~快给家里选幅画吧~</view>
+  </view>
+  <view class='Popular_recommendation'>
+    <view class='Popular_recommendation_title'>
+      <view class='xiantiao'></view>
+      <view class='Popular_recommendation_title_center'>
+        <image src='http://wjdh.yccjb.com/%E6%8E%A8%E8%8D%90@2x.png'></image>
+        <view>热门推荐</view>
+      </view>
+      <view class='xiantiao'></view>
+    </view>
+    <view class='onbox_tabshow'>
+      <view class='tabbox' wx:for="{{imglist}}" wx:key="{{index}}" data-id="{{item.g_id}}" bindtap='godetails'>
+        <image mode='widthFix' src='{{item.img_url}}'></image>
+        <view class='tabbox_title'>{{item.g_name }}</view>
+        <view class='tabbox_price'>¥{{item.g_price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

@@ -1,0 +1,14 @@
+<view class="container" wx:if="{{contentFlag==0}}">
+  <view class="homeBox">
+    <image src="http://wjdh.yccjb.com/homeBg.png" mode="aspecFit"></image>
+  </view>
+  <view class="homeDesc">{{homeDescMessage}}</view>
+  <button wx:if="{{getUserInfoFlag}}" class="getUserBtn" open-type='getUserInfo' bindgetuserinfo="getUserInfo">
+    <image src="http://wjdh.yccjb.com/wxBg.png" mode="aspecFit"></image>
+  </button>
+  <button wx:if="{{getPhoneFlag}}" class="getPhoneBtn" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" plain="true">授权手机号</button>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

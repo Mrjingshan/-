@@ -1,0 +1,33 @@
+<view class="container">
+  <image class="aboutHead" src="http://wjdh.yccjb.com/logo.png" mode="aspecFit"></image>
+  <view class="introduce bgFFF">
+    <view class="introduceTitle">公司介绍</view>
+    <view class="introduceContent">某家科技是中国领先的艺术家和艺术品推广机构，由业内资深专家发起成立。旗下拥有中国领先的在线字画推广平台——我家的画。旨在帮助1亿中国家庭精选“书画传家宝”。平台集中签约了数百位中国书画名家，近千位性价比高、且颇具未来成长性的实力派画家，为用户提供专业化服务，搭建签约艺术精品和艺术消费者之间的互动平台。让艺术精品走进生活、使生活更加美好，是我们永恒的使命！</view>
+  </view>
+  <view class="introduce bgFFF" style="margin-top: 30rpx;">
+    <view class="introduceTitle">产品介绍</view>
+    <view class="introduceContent">我家的画是中国领先的艺术品推广平台，旨在帮助1亿中国家庭精选书画传家宝，让艺术走进生活、使生活更加美好，是我们永恒的使命。</view>
+  </view>
+  <!-- 联系方式开始 -->
+  <view class="contact">
+    <view class="contactOne">
+      <image src="http://wjdh.yccjb.com/phoneIcon.png" mode="aspecFit"></image>
+      <text catchtap='callPhone1'>联系电话：400-666-1953</text>
+    </view>
+    <view class="contactTwo" catchtap='callPhone2'>
+      <text>010-85285571</text>
+    </view>
+  </view>
+  <!-- 联系方式结束 -->
+  <!-- 关于公司开始 -->
+  <view class="endContent">
+    <view class="endOne">
+      <image class="left" src="http://wjdh.yccjb.com/leftLine.png" mode="aspecFit"></image>
+      <text>某家科技有限公司</text>
+      <image class="right" src="http://wjdh.yccjb.com/rightLine.png" mode="aspecFit"></image>
+    </view>
+    <view class="endText">本产品最终解释权归北京某家科技有限公司所有</view>
+    <view class="endText">京 ICP 备 1 6030546 号-4</view>
+  </view>
+  <!-- 关于公司结束 -->
+</view>

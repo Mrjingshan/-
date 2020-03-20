@@ -1,0 +1,8 @@
+<!--pages/Comment/Comment.wxml-->
+<view class='Comment_box'>
+  <view class='Comment_title'>{{persolist.comtitle}}</view>
+  <view class='Comment_content'>{{persolist.comment}}</view>
+  <view wx:for="{{persolist.comments}}" wx:key="{{index}}">
+    <image src='{{item.path}}'></image>
+  </view>
+</view>

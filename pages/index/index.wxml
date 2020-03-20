@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<view class="index_box">
+  <movable-area class="movableContent">
+  <view class="scrollContent">
+    <scroll-view class='index_scroll'>
+      <view class='banner_con'>
+        <swiper class="swiper" autoplay="auto" current="{{currentSwiper}}" indicator-dots="{{false}}" bindchange="swiperChange" interval="5000" duration="500">
+          <block wx:for="{{swiper}}" wx:key="{{index}}">
+            <swiper-item>
+              <image src="{{item.url}}" data-item="{{index}}" catchtap='swiperCatchtapFun' class="slide-image" style='width:100%; height:700rpx;' lazy-load="true"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view class="dots">
+          <block wx:for="{{swiper}}" wx:key="{{index}}">
+            <view class="dot {{index==currentSwiper?'active':''}}"></view>
+          </block>
+        </view>
+        <!-- <image catchtap='indexSearch' src='http://wjdh.yccjb.com/ss.png'></image> -->
+      </view>
+      <view class='home_sort'>
+        <view class='home_li' scroll-x wx:for="{{name}}" wx:key="{{index}}" bindtap='fnTabSort' data-index="{{item}}">
+          <text>{{item.name}}</text>
+          <text wx:if="{{index==0}}">TRADITION</text>
+          <text wx:if="{{index==1}}">OILS</text>
+          <text wx:if="{{index==2}}">CALLIGRAPHY</text>
+        </view>
+        <view class='home_li' bindtap='goMingJia'>
+          <text>名家</text>
+          <text>FAMOUS</text>
+        </view>
+      </view>
+      <!-- 精品推荐开始 -->
+      <view class="boutique" wx:if="{{boutiqueData.length>0}}">
+        <view class="home_title">
+          <view>精品推荐/
+            <text>RECOMMEND</text>
+          </view>
+          <view>让艺术走进生活</view>
+        </view>
+        <view class="boutique_list" wx:if="{{boutiqueData.length>0}}">
+          <view class='boutique_li' wx:for="{{boutiqueData}}" wx:key="{{index}}" data-item="{{item}}" bindtap='boutique_Go'>
+            <view class='boutique_image_content'>
+              <image src='{{item.img_url}}' lazy-load='true'></image>
+            </view>
+            <view class='boutique_li_name'>
+              <text class="price_new">¥ {{item.g_price}}</text>
+              <text class="name">{{item.painter_name}} | {{item.product_name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 精品推荐结束 -->
+      <!-- 更多精品开始 -->
+      <view class='home_list'>
+        <view class="home_title">
+          <view>更多精品/
+            <text>BOUTIQUE</text>
+          </view>
+          <view>让生活变成艺术</view>
+        </view>
+        <view class='home_list_box'>
+          <view class="home_list_box_con" wx:for="{{imglist}}" wx:key="{{index}}" bindtap='godetailsList' data-index="{{item}}">
+            <view class="home_list_box_con_img {{item.product_color=='0'?'color0':'color1'}}">
+              <view class="box-conImg">
+                <image mode='aspectFit' src='{{item.img_url}}'></image>
+              </view>
+            </view>
+            <view class='home_list_box_con_txt'>
+              <view class="home_list_newline"><text class="textName">{{item.painter_name}} | {{item.product_name}}</text><text class="textPrice">¥{{item.g_price}}</text></view>
+              <view class="home_list_oldline">¥{{item.market_price}}</view>
+              <!-- <view wx:if="{{item.market_price==null}}">¥
+                <text class="item_gprice">{{item.g_price}}</text>
+                <text>¥0.00</text>
+              </view>
+              <view wx:else>¥
+                <text class="item_gprice">{{item.g_price}}</text>
+                <text>¥{{item.market_price}}</text>
+              </view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 更多精品结束 -->
+    </scroll-view>
+  </view>
+  <movable-view class="serviceContent" direction="all" style="top:74%;">
+      <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+        <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+      </button>
+    </movable-view>
+  </movable-area>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>
+<button class="authorBtn" open-type='getUserInfo' bindgetuserinfo="getUserInfo" wx:if="{{wxFlag}}"></button>
+<button class="authorBtn" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" wx:if="{{phoneFlag}}"></button>
+<!-- 客服图标不可拖动 -->
+<!-- <view class='serviceContent'>
+  <button class='cust_btn_contact' open-type='contact' show-message-card='{{true}}' send-message-title='{{detailsData.g_name}}' send-message-path='{{contactMsgPath}}' send-message-img='{{detailsData.moreimg[1].img_url}}' bindcontact='contactHandle'>
+    <image src='http://wjdh.yccjb.com/kfnew.png'></image>
+  </button>
+</view> -->

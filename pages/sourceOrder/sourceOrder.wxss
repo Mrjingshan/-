@@ -1,0 +1,7 @@
+@import '/pages/sourceCode/sourceCode';
+.tableHeadParent{
+  border-bottom: 1rpx solid #666;
+}
+.tableHeadItem{
+  width: 345rpx;
+}

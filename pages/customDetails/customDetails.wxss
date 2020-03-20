@@ -1,0 +1,97 @@
+page{
+  background: #F5F5F5;
+}
+.container{
+  padding-top: 25rpx;
+}
+.orderHeader{
+  width: 690rpx;
+  padding: 32rpx 30rpx 36rpx 30rpx;
+  background: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+.orderLi{
+  width: 100%;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: #333333;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 33rpx;
+}
+.orderLi:last-child{
+  margin-bottom: 0;
+}
+.orderLiLeft{
+  width: 25%;
+  float: left;
+}
+.orderLiRight{
+  width: 74%;
+  color: #666666;
+  text-align: left;
+  float: right;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.orderContent{
+  width: 690rpx;
+  padding: 32rpx 30rpx 36rpx 30rpx;
+  background: #FFFFFF;
+}
+.orderItems{
+  width: 100%;
+  display: flex;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+.orderItems:last-child{
+  margin-bottom: 0;
+}
+.orderItems.common{
+  font-weight: normal;
+  color: #666666;
+}
+.redFont{
+  color: #D00105;
+}
+.orderItem{
+  flex: 1;
+}
+.orderItem:last-child{
+  flex: 1.5;
+}
+.orderItem>text:first-child{
+  color: #3468ED;
+  font-size: 28rpx;
+}
+.orderItem>text:last-child{
+  color: #3468ED;
+  font-size: 28rpx;
+  margin-left: 9rpx;
+}
+.imagesContent{
+  width: 100%;
+  height: 158rpx;
+  overflow: hidden;
+}
+.imagesCon{
+  width: 205rpx;
+  height: 128rpx;
+  float: left;
+  margin-right: 8rpx; 
+  background: #E9E9E9;
+  padding: 15rpx;
+}
+.imagesCon:last-child{
+  margin-right: 0;
+}
+.imagesCon>image{
+  width: 100%;
+  height: 100%;
+}

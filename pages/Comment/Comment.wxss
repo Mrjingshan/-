@@ -1,0 +1,21 @@
+/* pages/Comment/Comment.wxss */
+page{
+  width: 100%;
+  background: #fff;
+}
+.Comment_box{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.Comment_title{
+  font-size: 16px;
+  color: #666;
+}
+.Comment_content{
+  font-size: 14px;
+  color: #999;
+}
+image{
+  width: 100%;
+}

@@ -1,0 +1,76 @@
+page{
+  background: #F5F5F5;
+}
+.addressCon{
+  width: 100%;
+  margin-top: 10rpx;
+}
+.addressConLi{
+  width: 96%;
+  height: 90rpx;
+  margin-left: 4%;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.addressConLi>input{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+.addressConLi.addressChoose{
+  overflow: hidden;
+}
+.addressChoose>text.chooseTitle{
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #333333;
+  float: left;
+}
+.addressChoose>.chooseName{
+  width: 583rpx;
+  height: 90rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  color: #666666;
+  float: left;
+  margin-left: 15rpx;
+  overflow: hidden;
+}
+.tui-picker-detail{
+  width: 500rpx;
+  height: 100%;
+  display: inline-block;
+}
+.addressChoose .chooseName image{
+  width: 16rpx;
+  height: 32rpx;
+  float: right;
+  margin: 29rpx 32rpx 0 0;
+}
+.addressConLi.addressArea{
+  width: 100%;
+  height: 257rpx;
+  border-bottom: none;
+}
+.addressArea>textarea{
+  width: 91%;
+  height: 207rpx;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 42rpx;
+  padding: 25rpx 0;
+}
+.addressBtn{
+  width: 690rpx;
+  height: 94rpx;
+  font-size: 36rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 94rpx;
+  border-radius: 5px;
+  background: #E51A24;
+  margin: 60rpx auto;
+  border: 1px solid rgba(5,5,5,0.08);
+}

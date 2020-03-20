@@ -1,0 +1,111 @@
+page{
+  background: #F5F5F5;
+}
+.aboutHead{
+  width: 98rpx;
+  height: 98rpx;
+  margin: 14rpx auto 16rpx;
+  border-radius: 50%;
+  display: block;
+}
+.introduce{
+  width: 626rpx;
+  margin: 0 auto;
+  padding: 0 32rpx 32rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 4rpx 0 rgba(68,68,68,0.15);
+  border-radius: 13rpx;
+}
+.introduceTitle{
+  width: 100%;
+  height: 90rpx;
+  font-size: 37rpx;
+  color: #505050;
+  font-weight: bold;
+  line-height: 90rpx;
+  border-bottom: 2rpx solid #979797;
+}
+.introduceContent{
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #6C6C6C;
+  line-height: 40rpx;
+}
+.contact{
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx;
+}
+.contactOne{
+  display: inline-block;
+  font-size: 22rpx;
+  line-height: 32rpx;
+  color: #8A8A8A;
+  font-weight: bold;
+  vertical-align: middle;
+}
+.contactOne image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+.contactTwo{
+  display: block;
+  font-size: 22rpx;
+  line-height: 32rpx;
+  color: #8A8A8A;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 372rpx;
+}
+.endContent{
+  width: 100%;
+  margin-top: 50rpx;
+}
+.endOne{
+  width: 100%;
+  overflow: hidden;
+  height: 34rpx;
+  line-height: 34rpx;
+}
+.endOne image.left{
+  width: 150rpx;
+  height: 6rpx;
+  float: left;
+  margin: 14rpx 0 0 107rpx;
+}
+.endOne image.right{
+  width: 150rpx;
+  height: 6rpx;
+  float: right;
+  margin-right: 107rpx;
+  margin: 14rpx 107rpx 0 0;
+}
+.endOne text{
+  display: inline-block;
+  width: 212rpx;
+  text-align: center;
+  line-height: 34rpx;
+  font-size: 12px;
+  color: #888888;
+  font-weight: bold;
+  margin-left: 12rpx;
+}
+.endText{
+  width: 100%;
+  text-align: center;
+  font-size: 20rpx;
+  color: #BFBFBF;
+  font-weight: bold;
+}
+.aboutNext{
+  width: 100%;
+  height: auto;
+}
+.aboutNext>image{
+  display: block;
+  width: 536rpx;
+  height: 212rpx;
+  margin: 60rpx auto 0;
+}

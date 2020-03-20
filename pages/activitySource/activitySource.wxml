@@ -1,0 +1,27 @@
+<view class="container" hidden='{{!cgFlag}}'>
+  <view class="recommend">
+    <view class="swiper-container">
+    <!--  autoplay="auto" -->
+      <swiper interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+        <block wx:for="{{slider}}" wx:key="unique">
+          <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
+            <image src="{{item.picUrl}}" class="img"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="dots">
+        <block wx:for="{{slider}}" wx:key="unique">
+          <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}"></view>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="btns">
+    <!-- <view class="btnItem btn1">生成二维码素材</view> -->
+    <view class="btnItem btn2" catchtap='loadDiyImage'>生成二维码素材</view>
+  </view>
+</view>
+<view class="cg" hidden='{{cgFlag}}'>
+  <canvas style="width: 100%; height: 90%;" canvas-id="shareCanvas"></canvas>
+  <button class="saveBtn" style='position:relative;' bind:tap='saveImage'>保存到我的相册</button>
+</view>

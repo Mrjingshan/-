@@ -1,0 +1,60 @@
+<!--pages/confirm_order/confirm_order.wxml-->
+<view class='confirm_box'>
+  <scroll-view>
+    <view class='confirm_address' wx:if="{{headStatus == 2}}" bindtap='goaddaddress'>
+      <view class='confirm_address_left'><image src='http://wjdh.yccjb.com/address1.png'></image></view>
+      <view class='confirm_address_center'>您还没有添加地址，请添加新地址</view>
+      <view class='confirm_address_right'><image src='http://wjdh.yccjb.com/address2.png'></image></view>
+    </view>
+    <view class='confirm_address_existence' wx:if="{{headStatus == 1}}" catchtap='changeOtherAddress'>
+      <view class='confirm_address_existence_left'><image src='http://wjdh.yccjb.com/address1.png'></image></view>
+      <view class='confirm_address_existence_center'>
+        <view class='confirm_address_existence_center_top'>
+          <text>收货人：{{addressList.name}}</text>
+          <text>{{addressList.phone}}</text>
+        </view>
+        <view class='confirm_address_existence_center_bottom'>
+          {{defaultAddress}}
+        </view>
+      </view>
+      <view class='confirm_address_existence_right'><image src='http://wjdh.yccjb.com/left.png'></image></view>
+    </view>
+    <view class='confirm_list'>
+      <view class='confirm_goods' wx:for="{{list}}" wx:key="{{index}}">
+        <view class='confirm_goods_left'><image mode='aspectFit' src='{{item.goods_attr_icon}}'></image></view>
+        <view class='confirm_goods_right'>
+          <view class='confirm_goods_right_one'>{{item.goods_name}}</view>
+          <view class='confirm_goods_right_two'>{{item.goods_attr_name}}</view>
+          <view class='confirm_goods_right_three'>x{{item.goods_size}}</view>
+          <view class='confirm_goods_right_four'>¥{{we.toFixed(item.goods_size * item.goods_attr_price)}}</view>
+        </view>
+      </view>
+      <view class='confirm_Other'>
+        <view class='confirm_Other_one'><text>商品总价</text><text>¥{{we.toFixed(total)}}</text></view>
+        <view class='confirm_Other_two'><text>运费</text><text>快递包邮</text></view>
+        <view class='confirm_Other_two'><text>配送方式</text><text>物流配送</text></view>
+        <view class='confirm_Other_three'><text>支付方式</text><text>在线支付</text></view>
+      </view>
+      <view class='confirm_Remark'>
+        <view>买家留言</view>
+        <view><input placeholder='选填，如有需要，请写下您的特殊要求' bindinput ="remark"></input></view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class='confirm_footer'>
+    <view>
+      <text>合计：</text>
+      <text>¥{{we.toFixed(total)}}</text>
+    </view>
+    <view wx:if="{{headStatus == 2}}" class='bg2'>提交订单</view>
+    <view wx:if="{{headStatus == 1}}" class='bg' bindtap='Placorder'>提交订单</view>
+  </view>
+</view>
+<wxs module="we">
+  var toFixed = function (value) {
+  return value.toFixed(2);
+}
+module.exports = {
+   toFixed :toFixed
+}
+</wxs>

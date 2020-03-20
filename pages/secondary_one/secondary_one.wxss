@@ -1,0 +1,150 @@
+page{
+  background: #F5F5F5;
+  height: 100%;
+}
+.secondary_one_box{
+  width: 100%;
+}
+.onebox_tab{
+  width: 100%;
+  display: flex;
+  background: #fff;
+}
+.onbox_tab_btn{
+  flex-grow: 1;
+  height: 66rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #353535;
+}
+.onbox_tab_btn view{
+  width: 100rpx;
+  height: 66rpx;
+  box-sizing: border-box;
+  padding: 0rpx 0rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.onbox_tab_btn view.active::after{
+  /* border-bottom: solid 6rpx transparent; */
+  content: '';
+  position: absolute;
+  width: 100rpx;
+  height: 6rpx;
+  background: #D00408;
+  top: 66rpx;
+  left: 50%;
+  margin-left: -50rpx;
+}
+.onbox_tabshow{
+  /* margin-top: 20rpx;
+  padding: 0rpx 30rpx 20rpx;
+  overflow: hidden; */
+  column-count: 2;
+  column-gap: 20rpx;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx;
+}
+.tabbox{
+  background-color: #fff;
+  /* float: left; */
+  width: 335rpx;
+  display: inline-block;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10rpx;
+  margin-bottom: 32rpx;
+}
+.tabbox:nth-child(odd){
+  /* height: 470rpx; */
+}
+.tabbox:nth-child(even){
+  margin-top: 0px;
+  /* height: 435rpx; */
+}
+.tabbox:nth-child(odd) .viewImg{
+  width: 275rpx;
+  /* height: 243rpx; */
+  padding: 30rpx 30rpx;
+  /* background: #e9e9e9; */
+  border-radius: 10rpx 10rpx 0 0;
+}
+.tabbox:nth-child(1) .viewImg{
+  width: 275rpx;
+  /* height: 253rpx; */
+  padding: 30rpx 30rpx;
+  /* background: #e9e9e9; */
+  border-radius: 10rpx 10rpx 0 0;
+}
+.tabbox:nth-child(even) .viewImg{
+  width: 275rpx;
+  /* height: 218rpx; */
+  padding: 30rpx 30rpx;
+  /* background: #e9e9e9; */
+  border-radius: 10rpx 10rpx 0 0;
+}
+.tabbox .viewContent{
+  width: 295rpx;
+  border-radius: 0 0 10rpx 10rpx;
+  background: #fff;
+  padding: 18rpx 20rpx 20rpx;
+}
+.tabbox image{
+  width: 100%;
+}
+.tabbox_title{
+  font-size: 28rpx;
+  color: #666666;
+  height: 80rpx;
+  line-height: 40rpx;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.tabbox_titletwo{
+  font-size: 28rpx;
+  color: #333333;
+  margin-top: 17rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-weight: 400;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.tabbox_price{
+  font-size: 28rpx;
+  color: #030000;
+  margin-top: 15rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-weight: 400;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.onbox_img{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150rpx;
+}
+.onbox_img image{
+  width: 360rpx;
+  height: 196rpx;
+}
+.onbox_img view{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  color: #666;
+}

@@ -1,0 +1,81 @@
+<view class="container">
+  <!-- 头部内容开始 -->
+  <view class="orderHeader">
+    <view class="orderLi">
+      <view class="orderLiLeft">订单编号:</view>
+      <view class="orderLiRight">{{dataObj.id}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft">订单名称:</view>
+      <view class="orderLiRight">{{dataObj.order_name}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft">客户姓名:</view>
+      <view class="orderLiRight">{{dataObj.linkman_name}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft">客户地址:</view>
+      <view class="orderLiRight">{{dataObj.linkman_address}}</view>
+    </view>
+  </view>
+  <!-- 头部内容结束 -->
+  <!-- 中间内容开始 -->
+  <view class="orderContent">
+    <view class="orderItems">
+      <view class="orderItem">作品名称</view>
+      <view class="orderItem">总价</view>
+      <view class="orderItem">定金</view>
+      <view class="orderItem">操作</view>
+    </view>
+    <view class="orderItems common" wx:for="{{dataObj.goods}}" wx:key="{{item.index}}">
+      <view class="orderItem">{{item.goods_name}}</view>
+      <view class="orderItem redFont">¥{{item.goods_price}}</view>
+      <view class="orderItem redFont">¥{{item.paid_total}}</view>
+      <view class="orderItem"><text data-item="{{item}}" catchtap='checkDetails'>查看</text><text data-item="{{item}}" catchtap='sourceDetails' wx:if="{{dataObj.is_state==3||dataObj.is_state=='3'}}">查看溯源码</text></view>
+    </view>
+  </view>
+  <!-- 中间内容结束 -->
+  <view class="orderHeader" wx:if="{{signObj!=''}}" style="margin-top:20rpx;">
+    <view class="orderLi">
+      <view class="orderLiLeft">作品名称:</view>
+      <view class="orderLiRight">{{signObj.goods_name}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft"><text decode="{{true}}">画&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家:</text></view>
+      <view class="orderLiRight">{{signObj.name}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft">画作类型:</view>
+      <view class="orderLiRight">{{signObj.subject_name}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft">带框尺寸:</view>
+      <view class="orderLiRight">{{signObj.frame_size}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft"><text decode="{{true}}">数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</text></view>
+      <view class="orderLiRight">{{signObj.goods_size}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft"><text decode="{{true}}">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</text></view>
+      <view class="orderLiRight">¥{{signObj.goods_price}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft"><text decode="{{true}}">总&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</text></view>
+      <view class="orderLiRight">¥{{signObj.total}}</view>
+    </view>
+    <view class="orderLi">
+      <view class="orderLiLeft"><text decode="{{true}}">定&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金:</text></view>
+      <view class="orderLiRight">¥{{signObj.paid_total}}</view>
+    </view>
+    <view class="orderLi" wx:if="{{imageArr.length>0}}">
+      <view class="orderLiLeft">参考图片:</view>
+      <view class="orderLiRight"></view>
+    </view>
+    <view class="imagesContent" wx:if="{{imageArr.length>0}}">
+      <view class='imagesCon' wx:for="{{imageArr}}" wx:key="{{item.index}}">
+        <image src='{{item}}' mode='aspectFit'></image>
+      </view>
+    </view>
+  </view>
+</view>

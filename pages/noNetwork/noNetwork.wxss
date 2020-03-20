@@ -1,0 +1,14 @@
+.container{
+  background: #FFFFFF;
+}
+image{
+  width: 360rpx;
+  height: 286rpx;
+}
+view{
+  font-size: 32rpx;
+  color: #999999;
+  margin-top: 38rpx;
+  width: 100%;
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="head">
+    <view>
+      <view class="item">申请时间</view>
+      <view class="item">提现金额</view>
+      <view class="item">审核状态</view>
+    </view>
+  </view>
+  <view class="content">
+    <view wx:for="{{listData}}" wx:key="{{index}}">
+      <view class="item">{{item.create_time}}</view>
+      <view class="item">{{item.amount}}</view>
+      <view class="item" wx:if="{{item.is_state=='0'}}">待审核</view>
+      <view class="item active" wx:if="{{item.state=='1'}}">审核通过</view>
+      <view class="item" wx:if="{{item.state=='2'}}">提现拒绝</view>
+      <view class="item" wx:if="{{item.state=='3'}}">提现失败</view>
+    </view>
+  </view>
+  <!-- <view class="tip">温馨提示：提现失败一般是由于微信账号设置有误的原因，提现金额系统已退还，请重新设置账号后再提现。</view> -->
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

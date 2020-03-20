@@ -1,0 +1,27 @@
+.cg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #E7EFF5;
+}
+.cg painter>view{
+  width: 750rpx !important;
+  height: 1070rpx !important;
+}
+.cg painter>view>canvas{
+  width: 750rpx !important;
+  height: 1070rpx !important;
+}
+.cg .saveBtn{
+  width: 690rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  background: #E51A24;
+  border: 1rpx solid rgba(5,5,5,0.08);
+  border-radius: 10rpx;
+  color: #FFF;
+  font-size: 36rpx;
+}

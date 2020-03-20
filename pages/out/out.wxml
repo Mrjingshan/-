@@ -1,0 +1,2 @@
+<!--pages/out/out.wxml-->
+<web-view src="http://www.kuaidi100.com/"></web-view>

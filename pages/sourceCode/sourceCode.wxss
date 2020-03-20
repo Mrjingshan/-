@@ -1,0 +1,118 @@
+.scell{
+  width: 100%;
+  height: 94rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+  position: relative;
+}
+.stext{
+  display: inline-block;
+  position: absolute;
+  height: 42rpx;
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 42rpx;
+  top: 26rpx;
+  left: 46rpx;
+}
+.stext::after{
+  content: '';
+  width: 6rpx;
+  height: 24rpx;
+  background: #E51A24;
+  position: absolute;
+  left: -10rpx;
+  top: 10rpx;
+}
+.scontent{
+  width: 100%;
+}
+.scontent image{
+  display: block;
+  width: 420rpx;
+  height: 300rpx;
+  padding: 20rpx 0;
+  margin-left: 30rpx;
+}
+.scontent image.image30{
+  display: block;
+  width: 690rpx;
+  height: 452rpx;
+  padding: 30rpx 0;
+  margin-left: 30rpx;
+}
+.textContent{
+  width: 100%;
+}
+.artistContent{
+  width: 690rpx;
+  height: auto;
+  font-size: 32rpx;
+  color: #666666;
+  margin: 30rpx 0 30rpx 30rpx;
+  text-decoration: underline;
+}
+.tableHeadParent{
+  width: 94%;
+  height: 165rpx;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+  margin: 0 3% 30rpx 3%;
+}
+.tableHead{
+  width: auto;
+  height: 164rpx;
+  overflow: hidden;
+  border-top: 1rpx solid #666;
+  border-left: 1rpx solid #666;
+  border-right: 1rpx solid #666;
+}
+.tableHeadItem{
+  width: 300rpx;
+  height: 164rpx;
+  font-size: 26rpx;
+  color: #666666;
+  text-align: center;
+  line-height: 80rpx;
+  display: inline-block;
+  border-right: 1rpx solid #666;
+}
+.tableHeadItem:last-child{
+  border-right: none;
+}
+.tableHeadItem .subItem1,.tableHeadItem .subItem2{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #666;
+}
+.tableBodyParent{
+  width: 94%;
+  height: 90rpx;
+  overflow: hidden;
+  margin-left: 3%;
+  background: #fff;
+  white-space: nowrap;
+  border: 1rpx solid #666;
+  border-top: none;
+}
+.tableBody{
+  width: auto;
+  height: 90rpx;
+  overflow: hidden;
+}
+.tableBodyItem{
+  width: 200rpx;
+  text-align: center;
+  height: 100%;
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 34rpx;
+  word-wrap:break-word;
+  display: inline-block;
+  border-right: 1rpx solid #666;
+}
+.tableBodyItem:last-child{
+  border-right: none;
+}

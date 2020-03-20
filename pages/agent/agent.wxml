@@ -1,0 +1,90 @@
+<view class="container">
+  <view class="box_top">
+    <view class="box_bg">
+      <image src="http://wjdh.yccjb.com/boxBg.png" mode="aspecFit"></image>
+      <view class="boxContent">
+        <image class="headerImg" src="{{userInfo.avatarUrl}}" mode="aspecFit"></image>
+        <view class="contentRight">
+          <view class="name">{{userInfo.nickName}}</view>
+          <view class="identity">
+            <text>艺术代理商</text>
+          </view>
+          <view class="chooseTab">
+            <view class="orderText"></view>
+            <view class="controlText" catchtap='goAllOrders'>查看全部订单
+              <image class="icon" src="http://wjdh.yccjb.com/whiteIcon.png" mode="aspecFit" style="float:right;"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="box_show">
+        <scroll-view scroll-x="true" style="white-space: nowrap;display: block" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+          <view class="scrollItem" bindtouchmove="touchStart">
+            <view class="title">本月销售额</view>
+            <view class="totalPrice" wx:if="{{agentObj.monthOrderTotal}}">{{agentObj.monthOrderTotal}}</view>
+            <view class="totalPrice" wx:else>0.00</view>
+            <view class="lineBar"></view>
+            <view class="bars">
+              <view class="barsItem">
+                <view class="title">今日订单</view>
+                <view class="count" wx:if="{{agentObj.todayOrderNum>0}}">{{agentObj.todayOrderNum}}</view>
+                <view class="count" wx:else>0</view>
+              </view>
+              <view class="barsItem">
+                <view class="title">今日销售额</view>
+                <view class="count" wx:if="{{agentObj.todayOrderTotal}}">{{agentObj.todayOrderTotal}}</view>
+                <view class="count" wx:else>0.00</view>
+              </view>
+              <view class="barsItem" catchtap='goIncome'>
+                <view class="title">今日收益</view>
+                <view class="count" wx:if="{{agentObj.todayIncomeTotal}}">{{agentObj.todayIncomeTotal}}</view>
+                <view class="count" wx:else>0.00</view>
+              </view>
+            </view>
+          </view>
+          <view class="scrollItem" bindtouchmove="touchStart1">
+            <view class="title">账户余额</view>
+            <view class="totalPrice" style="position: relative;margin:26rpx auto 46rpx;" wx:if="{{drawableCash!=''}}">{{drawableCash}}<text bindtap='cashOperation'>立即提现</text></view>
+            <view class="totalPrice" style="position: relative;margin:26rpx auto 46rpx;" wx:else>0.00<text bindtap='cashOperation'>立即提现</text></view>
+            <!-- <view class="lineBar"></view> -->
+            <view class="bars">
+              <view class="barsItem">
+                <view class="title">累计收益</view>
+                <view class="count" style="font-weight: bold;color:#333;" wx:if="{{agentObj.incomeTotal}}">{{agentObj.incomeTotal}}</view>
+                <view class="count" style="font-weight: bold;color:#333;" wx:else>0.00</view>
+              </view>
+              <view class="barsItem">
+                <view class="title">本月收益</view>
+                <view class="count" style="font-weight: bold;color:#333;" wx:if="{{agentObj.monthIncomeTotal}}">{{agentObj.monthIncomeTotal}}</view>
+                <view class="count" style="font-weight: bold;color:#333;" wx:else>0.00</view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="barsNav">
+          <view class="barsNavItem {{navIndex==1?'active':''}}" data-nav='1' bindtap='changeNavItem1'></view>
+          <view class="barsNavItem {{navIndex==1?'':'active'}}" bindtap='changeNavItem2'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 素材开始 -->
+  <view class="imageItem" style="margin-top:40rpx;" catchtap='goAgentDirectCode'>
+    <image class="icon" src="http://wjdh.yccjb.com/image1.png" mode="aspecFit" style="float:right;"></image>
+  </view>
+  <!-- 素材结束 -->
+  <view class="itemView">
+    <view catchtap='goActivitySource'>
+      <text>活动素材</text>
+      <image class="icon" src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit" style="float:right;"></image>
+    </view>
+    <view catchtap='agentRules'>
+      <text>佣金规则</text>
+      <image class="icon" src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit" style="float:right;"></image>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

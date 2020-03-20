@@ -1,0 +1,34 @@
+<!--pages/search_list/search_list.wxml-->
+<view class='search_list_box'>
+  <scroll-view>
+     <view class='search_top'>
+        <view class='search_top_left'>
+          <view class='search_top_left_img'>
+            <image src='http://wjdh.yccjb.com/%E6%90%9C%E7%B4%A21.png'></image>
+          </view>
+          <view class='search_top_left_ipt'>
+            <input focus='{{true}}' placeholder='请输入想搜索的艺术家/作品/摆放位置' value='{{search_value}}' bindinput ="inputName"></input>
+          </view>
+        </view>
+        <view class='search_top_right' bindtap='searchClick'>搜索</view>
+      </view>
+      <view class='search_list'>
+        <view class='search_list_li' wx:for="{{listName}}" wx:key="{{index}}" bindtap='godetailsList' data-index="{{item.g_id}}">
+            <image mode="widthFix" src='{{item.img_url}}'></image>
+            <view class='sort_list_li_name'>
+                  <text wx-if="{{item.painter_name != null}}">{{item.painter_name}} | </text>
+                  <block wx:for="{{item.g_name}}" wx:key="*this"  wx:for-item="items">
+                      <text wx:if="{{items.key == true}}" style="color:red;">{{items.str}}</text>   
+                      <text wx:else>{{items.str}}</text>
+                  </block>     
+            </view>
+            <view class='sort_list_li_text'>{{item.sub_title}}</view>
+            <view class='sort_list_li_price'><text>¥</text><text>{{item.g_price}}</text></view>
+        </view>
+      </view>
+      <view class='dataNone' wx:if="{{listName.length<=0}}">
+        <image src='http://wjdh.yccjb.com/none.png'></image>
+        <view>抱歉，未搜索到相关结果</view>
+      </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="cells">
+    <view class='cell hasWX' wx:if="{{myMarketMan.real_name!=''}}">
+      <image src="/images/wxlogo.png" mode="aspecFit"></image>{{myMarketMan.real_name}} {{myMarketMan.phone}}
+    </view>
+    <view class='cell' catchtap='setAccount' wx:else>
+      <view>设置微信账号</view>
+      <view>去设置
+        <image src="http://wjdh.yccjb.com/moreIcon.png" mode="aspecFit"></image>
+      </view>
+    </view>
+    <view class='cell'>
+      <view>微信已授权</view>
+      <view class="headPhoto">
+        <image src="{{userInfo.avatarUrl}}" mode="aspecFit"></image>
+      </view>
+    </view>
+  </view>
+  <view class="view_p">提现金额</view>
+  <view class="view_content">
+    <view class="view_amount">
+      <text>￥</text>
+      <input type='digit' bindinput='cashInput'></input>
+    </view>
+    <view class="view_content_text" bindtap='msgShow'>
+      可提现金额
+      <text>{{drawableCash}}</text>元，冻结金额
+      <text>{{myMarketMan.freezing_amount}}</text>元
+      <image src="/images/help.png" mode="aspecFit"></image>
+    </view>
+    <view class="view_tip active" wx:if="{{view_tip_status==1}}">订单完成8天后，冻结金额即可提现</view>
+    <view class="view_tip"  wx:if="{{view_tip_status==0}}"></view>
+    <view class="view_record" catchtap='goCashRecord'>提现记录</view>
+    <view class="view_now" catchtap='cashNow'>立即提现</view>
+    <view class="view_msg">温馨提示：您的提现申请将在3-5个工作日内完成审核，请耐心等候~</view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

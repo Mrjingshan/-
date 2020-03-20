@@ -1,0 +1,34 @@
+<view classs="container">
+  <view class="scell">
+    <text class="stext">艺术家授权书</text>
+  </view>
+  <view class="scontent">
+    <image src="{{sourceOjb.power_path}}" mode="aspecFit"></image>
+  </view>
+  <view class="spaceBar"></view>
+  <view class="scell">
+    <text class="stext">作品合影</text>
+  </view>
+  <view class="scontent">
+    <image src="{{sourceOjb.photo_img}}" class="image30" mode="aspecFit"></image>
+  </view>
+  <view class="spaceBar"></view>
+  <view class="scell">
+    <text class="stext">订单介绍</text>
+  </view>
+  <view class="textContent">
+    <view class="artistContent">{{sourceOjb.pname}}--{{sourceOjb.name}}--¥{{sourceOjb.price}}</view>
+    <view class="tableHeadParent">
+      <scroll-view class="tableHead" scroll-x>
+        <view class="tableHeadItem" wx:for="{{tableList}}" wx:key="{{index}}">
+          <view class="subItem1">{{item.name}}</view>
+          <view class="subItem2">{{item.content}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

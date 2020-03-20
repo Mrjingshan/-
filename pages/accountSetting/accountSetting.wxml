@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="form">
+    <view class="formItem">
+      <view class="itemTitle">真实姓名:</view>
+      <view class="itemInput">
+        <input type="text" value="岑子墨"></input>
+      </view>
+    </view>
+    <view class="formItem">
+      <view class="itemTitle">手机号码:</view>
+      <view class="itemInput">
+        <input type="text" value="17633827373"></input>
+      </view>
+    </view>
+    <view class="formItem">
+      <view class="itemTitle">微信授权:</view>
+      <view class="itemInput">
+        <input type="text" value="已授权"></input>
+      </view>
+    </view>
+  </view>
+  <view class="formBtn">保存</view>
+  <view class="formTip">温馨提示：真实姓名请填写微信绑定的银行卡的实名认证姓名，否则会影响您的成功提现哦~</view>
+</view>

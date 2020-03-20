@@ -1,0 +1,168 @@
+page {
+  background: #f5f5f5;
+}
+
+.topBar {
+  width: 100%;
+  height: 68rpx;
+  line-height: 68rpx;
+  display: flex;
+  position: relative;
+  background: #fff;
+}
+
+.topBar .barItem {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  min-height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+  background: #fff;
+}
+
+.topBar .barItem.active:after {
+  content: '';
+  width: 128rpx;
+  height: 6rpx;
+  background: #e51a24;
+  position: absolute;
+  bottom: 0;
+  left: 10rpx;
+}
+
+.orderView {
+  width: 100%;
+  margin-top: 13rpx;
+}
+
+.orderViewLi {
+  width: 100%;
+  /* height: 456rpx; */
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.orderViewLi:last-child{
+  margin-bottom: none;
+}
+.orderViewContent {
+  width: 690rpx;
+  margin: 0 auto;
+  padding-bottom: 12rpx;
+}
+
+.head {
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #d4d4d4;
+}
+
+.orderNum {
+  font-size: 28rpx;
+  color: #666;
+  vertical-align: middle;
+}
+
+.payImg {
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 4rpx;
+  vertical-align: middle;
+  margin-left: 16rpx;
+}
+
+.orderSource {
+  /* display: inline-block; */
+  float: right;
+  font-size: 28rpx;
+  color: #666;
+}
+.wxNAMEs{
+  display: inline-block;
+  float: left;
+}
+.wxNAME{
+  display: inline-block;
+  width: 85rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.orderSource>.redColor {
+  color: #e51a24;
+}
+.productState {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 20rpx;
+}
+
+.productState>text {
+  color: #e51a24;
+}
+
+.productPrice {
+  margin-top: 4rpx;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.productImgCon {
+  width: 100%;
+  margin-top: 20rpx;
+  overflow: hidden;
+}
+
+.productImgCon>image {
+  width: 290rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  float: left;
+}
+
+.productImgCon>.rightCon {
+  width: 360rpx;
+  height: 200rpx;
+  float: right;
+}
+
+.productName {
+  width: 100%;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 10rpx;
+}
+
+.productCount {
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 14px;
+  color: #353535;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 4rpx;
+}
+
+.productMoney {
+  width: 100%;
+  line-height: 40rpx;
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 54rpx;
+}

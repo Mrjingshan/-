@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="topBar">
+    <view class="barItem {{index==chooseTabId?'active':''}}" wx:for="{{barItems}}" wx:key="{{index}}" catchtap='switchItem' data-item="{{item}}">{{item.name}}</view>
+  </view>
+  <scroll-view class="orderView">
+    <view class="orderViewLi" wx:for="{{orderList}}" wx:key="{{index}}">
+      <view class="orderViewContent">
+        <view class="head">
+          <text class="orderNum">订单号：{{item.id}}</text>
+          <image wx:if="{{item.source == '0'}}" class="payImg" src="http://wjdh.yccjb.com/pay.png" mode="aspecFit"></image>
+          <image wx:if="{{item.source == '1'}}" class="payImg" src="http://wjdh.yccjb.com/aaaa.png" mode="aspecFit" style="width:62rpx"></image>
+          <view class="orderSource"><text class='wxNAMEs'>订单来源:</text><text class='wxNAME' style='color:#e51a24'>{{item.user_name}}</text></view>
+        </view>
+        <view class="orderProduct">
+          <view class="productState">状态:
+            <text class="redColor" wx:if="{{item.is_state == '1'}}">待付款</text>
+            <text wx:if="{{item.is_state == '2'}}">待发货</text>
+            <text class="redColor" wx:if="{{item.is_state == '3'}}">待收货</text>
+            <text wx:if="{{item.is_state == '4'}}">已完成</text>
+            <text wx:if="{{item.is_state == '5'}}">已关闭</text>
+          </view>
+          <view class="productPrice">总价:￥{{item.total}}</view>
+          <view class="productImgCon" wx:for="{{item.order_goods}}" wx:for-item="subItem"  wx:key="{{subItem.index}}">
+            <image src="{{subItem.goods_icon}}" mode="aspecFit"></image>
+            <view class="rightCon">
+              <view class="productName">{{subItem.goods_name}}</view>
+              <view class="productCount">x{{subItem.goods_size}}</view>
+              <view class="productMoney">¥{{subItem.goods_price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

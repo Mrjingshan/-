@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="topBar">
+    <view class="barItem {{index==chooseTabId?'active':''}}" wx:for="{{barItems}}" wx:key="{{index}}" catchtap='switchItem' data-item="{{item}}">{{item.name}}</view>
+  </view>
+  <scroll-view class="orderView">
+    <view class="orderViewLi" wx:for="{{orderList}}" wx:key="{{index}}" data-item="{{item}}">
+      <view class="orderViewContent">
+        <view class="head">
+          <text class="orderNum">订单号：{{item.id}}</text>
+          <image class="payImg" src="http://wjdh.yccjb.com/pay.png" mode="aspecFit"></image>
+          <view class="orderSource">订单来源:<text>{{item.source_id}}</text></view>
+        </view>
+        <view class="orderProduct">
+          <!-- <view class="productState" wx:if="{{item.is_state==1}}">状态: <text class="redColor">待付款</text></view>
+          <view class="productState" wx:if="{{item.is_state==2}}">状态: 待发货</text></view>
+          <view class="productState" wx:if="{{item.is_state==3}}">状态: <text class="redColor">待收货</text></view>
+          <view class="productState" wx:if="{{item.is_state==4}}">状态: 已完成</text></view>
+          <view class="productState" wx:if="{{item.is_state==5}}">状态: 已关闭</text></view> -->
+          <view class="productPrice">总价:￥{{item.total}}</view>
+          <view class="productImgCon" wx:for="{{item.order_goods}}" wx:for-item="subItem" wx:key="{{subItem.index}}">
+            <image src="{{subItem.goods_icon}}" mode="aspecFit"></image>
+            <view class="rightCon">
+              <view class="productName">{{subItem.goods_name}}</view>
+              <view class="productCount">x{{subItem.goods_size}}</view>
+              <view class="productMoney">¥{{subItem.goods_price}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

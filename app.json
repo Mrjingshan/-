@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/classify/classify",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/sort/sort",
+    "pages/car/car",
+    "pages/customized/customized",
+    "pages/customDetails/customDetails",
+    "pages/sourceOrder/sourceOrder",
+    "pages/sourceCode/sourceCode",
+    "pages/secondary_one/secondary_one",
+    "pages/cashPage/cashPage",
+    "pages/setAccount/setAccount",
+    "pages/orderList/orderList",
+    "pages/orderSearch/orderSearch",
+    "pages/orderDetails/orderDetails",
+    "pages/favorites/favorites",
+    "pages/message/message",
+    "pages/aboutUs/aboutUs",
+    "pages/search/search",
+    "pages/ad1/ad1",
+    "pages/Commodity_details/Commodity_details",
+    "pages/activitySource/activitySource",
+    "pages/agentDirectCode/agentDirectCode",
+    "pages/partnerDirectCode/partnerDirectCode",
+    "pages/partner/partner",
+    "pages/incomeDetails/incomeDetails",
+    "pages/parentOrderList/parentOrderList",
+    "pages/addressList/addressList",
+    "pages/editAddress/editAddress",
+    "pages/agentOrderList/agentOrderList",
+    "pages/agent/agent",
+    "pages/accountSetting/accountSetting",
+    "pages/cashRecord/cashRecord",
+    "pages/parentRules/parentRules",
+    "pages/commissRules/commissRules",
+    "pages/teamManagement/teamManagement",
+    "pages/noNetwork/noNetwork",
+    "pages/logs/logs",
+    "pages/secondary_two/secondary_two",
+    "pages/perso_details/perso_details",
+    "pages/more_works/more_works",
+    "pages/confirm_order/confirm_order",
+    "pages/search_list/search_list",
+    "pages/Comment/Comment",
+    "pages/home/home",
+    "pages/homePageAds/homePageAds",
+    "pages/out/out"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "我家的画",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#E51A24",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/homesel.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "images/sort.png",
+        "selectedIconPath": "images/sortsel.png"
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": "购物车",
+        "iconPath": "images/car.png",
+        "selectedIconPath": "images/carsel.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/minesel.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

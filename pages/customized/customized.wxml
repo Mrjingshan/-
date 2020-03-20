@@ -1,0 +1,60 @@
+<view class="container">
+  <!-- 有数据开始 -->
+  <view class="customContent" wx:if="{{dataFlag==1}}">
+    <!-- li开始 -->
+    <view class="licontent" wx:for="{{dataList}}" wx:key="{{index}}">
+      <view class="licon">
+        <view class='liLeft'>订单编号:</view>
+        <view class="liRight">{{item.order_id}}
+          <text>定金待支付</text>
+        </view>
+      </view>
+      <view class="licon">
+        <view class='liLeft'>订单名称:</view>
+        <view class="liRight">{{item.order_name}}</view>
+      </view>
+      <view class="licon">
+        <view class='liLeft'>
+          <text decode="{{true}}">订单总价:</text>
+        </view>
+        <view class="liRight liPrice">¥{{item.total}}</view>
+      </view>
+      <view class="licon" style='border-bottom:none;'>
+        <view class='liLeft'>
+          <text decode="{{true}}">订单定金:</text>
+        </view>
+        <view class="liRight liPrice">¥{{item.paid_total}}</view>
+      </view>
+      <view class="licon" style='border-bottom:none;'>
+        <view class='liLeft'>
+          <text decode="{{true}}">订单状态:</text>
+        </view>
+        <view class="liRight" wx:if="{{item.is_state==1}}">定金待支付</view>
+        <view class="liRight" wx:if="{{item.is_state==2}}">尾款待支付</view>
+        <view wx:if="{{item.is_state==3}}">订单完成</view>
+        <view wx:if="{{item.is_state==4}}">订单关闭</view>
+      </view>
+      <view class="btnContent">
+      <button class="btnView active" catchtap='goDetails' data-orderId="{{item.order_id}}">查看详情</button>
+      <button class="btnView active" wx:if="{{item.is_state=='2'}}" catchtap='payTailMoney' data-orderId="{{item.order_id}}">支付尾款</button>
+      <button class="btnView active" wx:if="{{item.is_state=='1'}}" catchtap='payTailMoney' data-orderId="{{item.order_id}}">支付定金</button>
+      </view>
+    </view>
+    <!-- li结束 -->
+  </view>
+  <!-- 有数据结束 -->
+  <view class="noData" wx:if="{{dataFlag==0}}">
+    <image src='http://wjdh.yccjb.com/customNull.png' mode='aspectFit'></image>
+    <view class="customNullTitle">您还没有定制订单哦~</view>
+    <view class="customTitleBottom">
+      <view>我家的画推出艺术家为您制定专属的书画作品业务</view>
+      <view>联系以下电话／微信号
+        <text class="redFont">15810988878</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

@@ -1,0 +1,164 @@
+page{
+  background: #F5F5F5;
+}
+.mineHead{
+  width: 100%;
+  height: 290rpx;
+  border-top: 1rpx solid #E5E5E5;
+  border-bottom: 1rpx solid #E5E5E5;
+  position: relative;
+}
+.mineHead image{
+  width: 100%;
+  height: 100%;
+}
+.minePicture{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 2rpx solid #FFFFFF;
+  box-shadow: 0 2rpx 2rpx 0 rgba(129,129,129,0.53);
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  margin-left: -70rpx;
+}
+.minePicture image{
+  width: 136rpx;
+  height: 136rpx;
+  margin: 2rpx 0 0 2rpx;
+  border-radius: 50%;
+}
+.mineName{
+  width: 100%;
+  font-size: 32rpx;
+  color: #000000;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 196rpx;
+}
+.mineOrder{
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.width92{
+  width: 92%;
+  height: 100%;
+  margin-left: 4%;
+  overflow: hidden;
+}
+.moLeft{
+  height: 100%;
+  display: inline-block;
+  font-size: 34rpx;
+  line-height: 98rpx;
+  color: #000000;
+  float: left;
+}
+.moRight{
+  height: 100%;
+  display: inline-block;
+  font-size: 30rpx;
+  line-height: 98rpx;
+  color: rgb(153, 153, 153);
+  float: right;
+  vertical-align: middle;
+}
+.moRight image{
+  width: 16rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mineOrderOptions{
+  width: 100%;
+  height: 128rpx;
+}
+.orderLi{
+  width: 25%;
+  height: 100%;
+  float: left;
+  text-align: center;
+}
+.orderLi image{
+  width: 54rpx;
+  height: 54rpx;
+  margin: 20rpx 0 0;
+}
+.orderLi text{
+  width: 100%;
+  height: 34rpx;
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 34rpx;
+  text-align: center;
+  display: inline-block;
+}
+.mineMenu{
+  width: 100%;
+  margin-top: 20rpx;
+}
+.mineMenuLi{
+  height: 86rpx;
+  line-height: 86rpx;
+  font-size: 34rpx;
+  color: #000000;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.mineMenuLi:last-child{
+  border-bottom: none;
+}
+.mineMenuLi>.width92{
+  overflow: hidden;
+}
+.mineMenuLi>.width92>text{
+  position: relative;
+  font-size: 34rpx;
+}
+.mineMenuLi>.width92>image{
+  width: 16rpx;
+  height: 32rpx;
+  float: right;
+  margin-top: 30rpx;
+}
+.dot{
+  width: 14rpx;
+  height: 14rpx;
+  display: inline-block;
+  border-radius: 50%;
+  background: #E51A24;
+  position: absolute;
+  top: -2rpx;
+  right: -15rpx;
+}
+.mineMenuLi>button{
+  width: 92%;
+  height: 100%;
+  padding: 0;
+  text-align: left;
+  background: #FFFFFF;
+  border: none;
+  font-size: 34rpx;
+  position: relative;
+}
+.mineMenuLi>button::after{
+  content: '';
+  border: none;
+}
+.mineMenuLi>button.button-hover{
+  background: #FFFFFF;
+  color: #000000;
+}
+.mineMenuLi>button image{
+  width: 16rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 0;
+}

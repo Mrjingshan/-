@@ -1,0 +1,16 @@
+<view class="container">
+  <!-- 系统消息有数据 -->
+  <view class="messageContent" wx:if="{{messageList.length>0}}">
+    <view class="messageLi" wx:for="{{messageList}}" wx:key="{{index}}">
+      <view class="messageTitle">
+        <text wx:if="{{item.is_state==1}}"></text>{{item.content}}</view>
+      <view class="messageDate">{{item.create_time}}</view>
+    </view>
+  </view>
+  <!-- 系统消息没有数据 -->
+  <view class="messageNull" wx:if="{{messageList.length<=0}}">
+    <image src="http://wjdh.yccjb.com/messageNo.png" mode="aspecFit"></image>
+    <view>您还没有收到消息哦</view>
+  </view>
+  <view class="cleanBtn" catchtap='clearMessages' wx:if="{{messageList.length>0}}">一键清除</view>
+</view>

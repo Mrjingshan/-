@@ -1,0 +1,115 @@
+.container {
+  background: #fff;
+}
+
+.recommend {
+  width: 100%;
+  height: 1020rpx;
+  margin-top: 32rpx;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.swiper-container .swiper {
+  width: 690rpx;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.swiper-container .swiper .img {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.swiper-container .dots {
+  position: absolute;
+  left: 48rpx;
+  bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-container .dots .dot {
+  margin: 0 8rpx;
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.6s;
+  /* font: 300 18rpx/28rpx "microsoft yahei"; */
+  text-align: center;
+}
+
+.swiper-container .dots .dot.active {
+  background: #e51a24;
+  width: 14.5rpx;
+  height: 14.5rpx;
+}
+
+.btns {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx;
+}
+
+.btnItem {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+  display: inline-block;
+  border-radius: 8rpx;
+  /* margin-left: 30rpx; */
+}
+
+.btn1 {
+  background: #e51a24;
+  color: #fff;
+}
+
+.btn2 {
+  background: #fff;
+  background: #e51a24;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 34rpx;
+}
+.cg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #E7EFF5;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx;
+}
+.cg painter>view{
+  width: 750rpx !important;
+  height: 1070rpx !important;
+}
+.cg painter>view>canvas{
+  width: 750rpx !important;
+  height: 1070rpx !important;
+}
+.cg .saveBtn{
+  width: 690rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  text-align: center;
+  background: #E51A24;
+  border: 1rpx solid rgba(5,5,5,0.08);
+  border-radius: 10rpx;
+  color: #FFF;
+  font-size: 36rpx;
+  margin-top: 10rpx;
+}

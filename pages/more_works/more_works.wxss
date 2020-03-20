@@ -1,0 +1,30 @@
+/* pages/more_works/more_works.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.case-page{
+  padding:10rpx;
+  background: #fff;
+}
+.list-masonry{
+  column-count: 2;
+  column-gap: 20rpx;
+}
+.item-masonry{
+  background-color: #fff;
+  break-inside: avoid; 
+  box-sizing: border-box; 
+  padding: 10rpx;
+}
+.item-masonry image {
+  width: 100%;
+}
+.text_one{
+  font-size: 15px;
+  color: #999999;
+}
+.text_two{
+  font-size: 17px;
+  color: #E51A24;
+  margin-left: 10rpx;
+}

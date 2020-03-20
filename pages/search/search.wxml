@@ -1,0 +1,35 @@
+<!--pages/search/search.wxml-->
+<view class='search_box'>
+  <view class='alert_msg' hidden='{{addcarFlag}}'>
+      <view class='alert_msg_imgs'><image src='{{imgurl_tishi}}'></image></view>
+      <view class='alert_msg_text'>{{alert_msg}}</view>
+    </view>
+  <view class='search_top'>
+    <view class='search_top_left'>
+      <view class='search_top_left_img'>
+        <image src='http://wjdh.yccjb.com/%E6%90%9C%E7%B4%A2.png'></image>
+      </view>
+      <view class='search_top_left_ipt'>
+        <input focus='{{true}}' bindinput="watchPassWord" value='{{inputValue}}' placeholder='请输入想搜索的艺术家/作品/摆放位置'></input>
+      </view>
+    </view>
+    <view class='search_top_right' bindtap='searchClick'>搜索</view>
+  </view>
+  <view class='search_title' wx:if="{{historyList.length > 0}}">
+    <view>搜索历史</view>
+    <view bindtap='emptyClick'>清空历史</view>
+  </view>
+  <view class='history_box'>
+    <view class='history_box_li' wx:for="{{historyList}}" wx:key="{{index}}" bindtap='historyClick' data-index='{{item.keyword}}'>
+    {{item.keyword}}
+    </view>
+  </view>
+  <!-- <view class='search_title'>
+    <view>热搜关键词</view>
+  </view>
+  <view class='history_box'>
+    <view class='history_box_li' wx:for="{{Search_hot}}" wx:key="{{index}}" bindtap='hotClick' data-index='{{item.id}}'>
+    {{item.name}}
+    </view>
+  </view> -->
+</view>

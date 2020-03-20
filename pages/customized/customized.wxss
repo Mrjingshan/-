@@ -1,0 +1,112 @@
+page{
+  background: #F5F5F5;
+}
+.container{
+  padding-top: 25rpx;
+}
+.customContent{
+  width: 100%;
+}
+.licontent{
+  width: 94%;
+  margin: 0 0 25rpx 3%;
+  padding-bottom: 40rpx;
+  background: #ffffff;
+}
+.licon{
+  width: 100%;
+  height: 73rpx;
+  font-size: 32rpx;
+  line-height: 73rpx;
+  overflow: hidden;
+}
+.licon:last-child{
+  border-bottom: none;
+}
+.liLeft{
+  width: 30%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  color: #333333;
+}
+.liRight{
+  float: right;
+  width: 68.5%;
+  height: 100%;
+  color: #666666;
+  text-align: left;
+  overflow: hidden;
+}
+.liRight.liPrice{
+  color: #D00105;
+}
+.liRight>text{
+  color: #D00105;
+  float: right;
+}
+.btnContent{
+  width: 92%;
+  height: 62rpx;
+  line-height: 62rpx;
+  margin: 84rpx auto 0;
+  overflow: hidden;
+}
+.btnView{
+  width: 31%;
+  height: 100%;
+  float: right;
+  padding: 0;
+  font-size: 26rpx;
+  color: #E51A24;
+  border-radius: 87px;
+  text-align: center;
+  margin-right: 18rpx;
+  /* border-radius: 8rpx; */
+  background: #999999;
+}
+.btnView:first-child{
+  margin-right: 0;
+}
+.btnView.active{
+  line-height: 62rpx;
+  background: #ffffff;
+  border: 1px solid #E51A24;
+}
+.noData{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFFFFF;
+}
+.noData>image{
+  width: 334rpx;
+  height: 323rpx;
+  display: block;
+  margin: 154rpx auto 0;
+}
+.customNullTitle{
+  width: 100%;
+  height: 34rpx;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 34rpx;
+  margin: 50rpx 0 0;
+  color: #989898;
+}
+.customTitleBottom{
+  width: 690rpx;
+  height: 100rpx;
+  line-height: 50rpx;
+  color: #989898;
+  text-align: center;
+  position: absolute;
+  bottom: 43rpx;
+  left: 30rpx;
+  font-size: 30rpx;
+}
+.redFont{
+  color: #D00105;
+}

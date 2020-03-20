@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="cells">
+    <view class="cell">
+      <text>真实姓名：</text>
+      <input type='text' value="" bindinput='setAccountName'></input>
+    </view>
+    <view class="cell">
+      <text>手机号码：</text>
+      <input type='number' value="" bindinput='setAccountPhone' maxlength='11'></input>
+    </view>
+    <view class="cell">
+      <text>微信授权：</text>
+      <text style="color: #999999;font-size: 30rpx;">已授权</text>
+    </view>
+  </view>
+  <view class="saveBtn" catchtap='saveAccount'>保存</view>
+  <view class="view_msg">温馨提示：真实姓名请填写微信绑定的银行卡的实名认证姓名，否则会影响您的成功提现哦~</view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

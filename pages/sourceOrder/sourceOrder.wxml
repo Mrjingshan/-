@@ -1,0 +1,50 @@
+<view classs="container">
+  <view class="scell">
+    <text class="stext">艺术家授权书</text>
+  </view>
+  <view class="scontent">
+    <image src="{{sourceOjb.power_path}}" mode="aspecFit"></image>
+  </view>
+  <view class="spaceBar"></view>
+  <view class="scell">
+    <text class="stext">作品合影</text>
+  </view>
+  <view class="scontent">
+    <image src="{{sourceOjb.photo_img}}" class="image30" mode="aspecFit"></image>
+  </view>
+  <view class="spaceBar"></view>
+  <view class="scell">
+    <text class="stext">订单介绍</text>
+  </view>
+  <view class="textContent">
+    <view class="artistContent">{{sourceOjb.goods_name}} / ¥{{sourceOjb.goods_price}}元 {{sourceOjb.name}}</view>
+    <view class="tableHeadParent" style='overflow:scroll'>
+      <scroll-view class="tableHead" scroll-x>
+        <view class="tableHeadItem">
+          <view class="subItem1">溯源码</view>
+          <view class="subItem2">{{sourceOjb.goods_code}}</view>
+        </view>
+        <view class="tableHeadItem">
+          <view class="subItem1">定制订单编号</view>
+          <view class="subItem2">{{sourceOjb.order_id}}</view>
+        </view>
+        <view class="tableHeadItem">
+          <view class="subItem1">创建时间</view>
+          <view class="subItem2">{{sourceOjb.create_time}}</view>
+        </view>
+        <view class="tableHeadItem">
+          <view class="subItem1">付款时间</view>
+          <view class="subItem2">{{sourceOjb.start_pay_time}}</view>
+        </view>
+        <view class="tableHeadItem">
+          <view class="subItem1">成交时间</view>
+          <view class="subItem2">{{sourceOjb.deal_time}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

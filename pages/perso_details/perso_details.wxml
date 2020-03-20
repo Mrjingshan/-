@@ -1,0 +1,52 @@
+<!--pages/perso_details/perso_details.wxml-->
+<view class='perso_details_box'>
+  <scroll-view>
+    <view class='introduce_big_box'>
+    </view>
+    <view class='introduce_box'>
+        <view class='introduce_box_img'><image src='{{persolist.headpath}}'></image></view>
+        <view class='introduce_box_title' wx:if="{{persolist.abstract != ''}}">—— 艺术家简介 ——</view>
+        <view class='introduce_box_title' wx:else></view>
+        <view class='introduce_box_msg'>{{persolist.abstract}}</view>
+      </view>
+      <view class='works_box' wx:if="{{persolist.goods.length != 0}}">
+        <view class='works_box_title'>在售作品</view>
+        <view class='works_box_list'>
+          <view class='works_box_list_li' wx:for="{{persolist.goods}}" wx:key="{{index}}" catchtap='goProductDetails' data-item="{{item}}">
+            <image src='{{item.img_url}}' mode="widthFix"></image>
+            <view class='worl_text'>
+              <text>{{item.g_name}}</text>
+              <text>¥{{item.g_price}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='works_box_mroe'>
+          <button wx:if="{{persolist.goods.length>=6}}" bindtap='goMoreworkslist' data-index="{{persolist.id}}">更多作品</button>
+        </view>
+      </view>
+      <view class='authorization_box'>
+         <view class='works_box_title'>艺术家授权</view>
+         <image src='{{persolist.power_path}}'></image>
+      </view>
+      <view class='works_box' wx:if="{{persolist.honor.length != 0}}">
+        <view class='works_box_title' >艺术家荣誉</view>
+        <view class='Honor_text' wx:for="{{persolist.honor}}" wx:key="{{index}}">
+         {{item.honor_comment}}。
+        </view>
+      </view>
+      <view class='authorization_box' wx:if="{{persolist.comments.length != 0}}">
+         <view class='works_box_title'>名家点评</view>
+         <view class='Comment_text'>
+            <text class='Comment_text_one'>《<text>{{persolist.comtitle}}</text>》</text>
+            <text class='Comment_text_two' bindtap='CommentClick' data-index="{{persolist.id}}">点击查看</text>
+         </view>
+      </view>
+      <view class='works_box'>
+        <view class='works_box_title' wx:if="{{persolist.auction.length != 0}}">拍卖记录</view>
+        <view class='Honor_text' wx:for="{{persolist.auction}}" wx:key="{{index}}">
+          {{item.auction_name}}
+        </view>
+      </view>
+  </scroll-view>
+</view>
+<image catchtap='artistDetailsGoIndex' wx:if="{{shareStatus==1}}" class="backHomeImg" src='http://wjdh.yccjb.com/backHome.png' mode="aspecFit"></image>

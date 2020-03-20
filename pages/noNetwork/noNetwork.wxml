@@ -1,0 +1,4 @@
+<view class="container">
+  <image src="/images/mine/eg.png" mode="aspecFit"></image>
+  <view>网络不好，开小差了～</view>
+</view>

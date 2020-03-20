@@ -1,0 +1,265 @@
+.topBar{
+  width: 100%;
+  height: 72rpx;
+  line-height: 72rpx;
+  display: flex;
+  position: relative;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+.topBar .barItem{
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  min-height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+  background: #FFFFFF;
+}
+.topBar .barItem.active:after{
+  content: '';
+  width: 128rpx;
+  height: 6rpx;
+  background: #E51A24;
+  position: absolute;
+  bottom: 10rpx;
+  left: 6rpx;
+}
+.nullContent{
+  width: 100%;
+  background: #FFFFFF;
+}
+.goIndexBtn{
+  width: 448rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #E51A24;
+  background: #FFF0F0;
+  border: 1px solid #E51A24;
+  box-shadow: inset 3px 0 0 0 rgba(247,30,30,0.50), inset -3px 0 0 0 rgba(246,29,29,0.50);
+  border-radius: 91px;
+  margin: 46rpx auto;
+}
+.nullContent image{
+  display: block;
+  width: 360rpx;
+  height: 196rpx;
+  margin: 136rpx auto 0;
+}
+.nullText{
+  width: 100%;
+  height: 30rpx;
+  font-size: 15px;
+  color: #666666;
+  margin-top: 26rpx;
+  line-height: 30rpx;
+  text-align: center;
+}
+.dataContent{
+  width: 100%;
+}
+.dataConHead{
+  width: 100%;
+  height: 132rpx;
+  padding-top: 20rpx;
+  background: #FFFFFF;
+}
+.dataConHeadSearch{
+  width: 100%;
+  height: 56rpx;
+  overflow: hidden;
+  position: relative;
+}
+.searchInput{
+  width: 532rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-left: 20rpx;
+  float: left;
+  background: #F5F5F5;
+  border: 0 solid #E6E6EA;
+  border-radius: 4px;
+  padding-left: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.searchBtn{
+  width: 96rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  margin-right: 20rpx;
+  background-image: linear-gradient(-132deg, #F9673D 0%, #E51A24 100%);
+  border-radius: 4px;
+  display: inline-block;
+  float: right;
+}
+.searchIcon{
+  position: absolute;
+  left: 46rpx;
+  top: 14rpx;
+}
+.orderView{
+  width: 100%;
+  margin-top: 10rpx;
+}
+.orderLi{
+  width: 100%;
+  height: auto;
+  background: #FFFFFF;
+  margin-bottom: 10rpx;
+}
+.orderLi:last-child{
+  margin-bottom: 0;
+}
+.liHead{
+  width: 690rpx;
+  margin-left: 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  vertical-align: middle;
+  border-bottom: 1rpx solid #D4D4D4;
+}
+.liLeft{
+  font-size: 28rpx;
+  color: #666666;
+  vertical-align: middle;
+}
+.liTime{
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 30rpx 8rpx 0 0;
+  float: right;
+}
+.liRight{
+  font-size: 28rpx;
+  color: #999999;
+  vertical-align: middle;
+  float: right;
+}
+.liStates{
+  width: 690rpx;
+  height: 82rpx;
+  margin: 20rpx auto;
+  overflow: hidden;
+}
+.listatesLeft{
+  width: 35%;
+  float: left;
+}
+.listatesRight{
+  width: 65%;
+  float: right;
+}
+.listatesRight view{
+  width: 100%;
+  text-align: right;
+}
+.listatesLeft view{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+.listatesLeft view>text.redColor{
+  color: #E51A24;
+}
+.listatesLeft view>text.grayColor{
+  color: #3F3F3F;
+}
+.listatesRight view>text{
+  display: inline-block;
+  width: 188rpx;
+  height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-top: 16rpx;
+  float: right;
+  border: 1px solid #E51A24;
+  border-radius: 87px;
+}
+.listatesRight view>text:first-child{
+  margin-left: 20rpx;
+  background: #E51A24;
+  color: #FFFFFF;
+  border: 1px solid #E51A24;
+}
+.listatesRight view>text:last-child{
+  margin-left: 20rpx;
+  color: #E51A24;
+}
+.listatesRight view.nomin>text{
+  margin-left: 20rpx;
+  border: 1rpx solid #E51A24;
+  background: #FFFFFF;
+  color: #E51A24;
+}
+.liProduct{
+  width: 690rpx;
+  margin: 0 auto 0;
+  overflow: hidden;
+}
+.liProduct .liProductSign{
+  width: 690rpx;
+  height: 200rpx;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+  display: flex;
+}
+.liProductImgParent{
+  width: 290rpx;
+  height: 200rpx;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 10rpx; */
+}
+.liProductImg{
+  width: 100%;
+  height: 100%;
+}
+.liProductRight{
+  width: 360rpx;
+  /* float: right; */
+  height: 200rpx;
+  margin-left: 20px;
+}
+.liName{
+  width: 100%;
+  font-size: 32rpx;
+  color: #333333;
+  line-height: 44rpx;
+  margin-top: 8rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.liCount{
+  width: 100%;
+  font-size: 28rpx;
+  color: #353535;
+  line-height: 40rpx;
+  margin-top: 8rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.liPrice{
+  width: 100%;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 40rpx;
+  margin-top: 50rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}

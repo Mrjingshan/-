@@ -1,0 +1,118 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "plugin",
+	"libVersion": "2.4.4",
+	"appid": "wxfe91612c6ab5a400",
+	"projectname": "update2",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 11,
+			"list": [
+				{
+					"id": -1,
+					"name": "收货地址列表",
+					"pathName": "pages/addressList/addressList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加/编辑地址信息",
+					"pathName": "pages/editAddress/editAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我是艺术代理商",
+					"pathName": "pages/agent/agent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "艺术代理商全部订单",
+					"pathName": "pages/agentOrderList/agentOrderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/mine/mine",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我是艺术合伙人",
+					"pathName": "pages/partner/partner",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "艺术合伙人全部订单",
+					"pathName": "pages/parentOrderList/parentOrderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "团队管理",
+					"pathName": "pages/teamManagement/teamManagement",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动素材",
+					"pathName": "pages/activitySource/activitySource",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "合伙人推广码",
+					"pathName": "pages/partnerDirectCode/partnerDirectCode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "代理商推广码",
+					"pathName": "pages/agentDirectCode/agentDirectCode",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "溯源码结果",
+					"pathName": "pages/sourceCode/sourceCode"
+				}
+			]
+		}
+	}
+}

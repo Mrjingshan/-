@@ -1,0 +1,4 @@
+<view class="container">
+  <image src='http://wjdh.yccjb.com/ad12.jpg' mode='widthFix' wx:if="{{fromStatus==1}}"></image>
+  <image class="fromStatus" src='http://wjdh.yccjb.com/ad22.jpg' mode='widthFix' wx:if="{{fromStatus==2}}"></image>
+</view>

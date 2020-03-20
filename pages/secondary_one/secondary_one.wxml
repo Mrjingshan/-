@@ -1,0 +1,22 @@
+<view class='secondary_one_box'>
+  <scroll-view>
+    <view class='onebox_tab'>
+      <view class='onbox_tab_btn' wx:for="{{tabdata}}" wx:key="{{indexr}}" bindtap='onTabsItemTap' data-index='{{item.id}}'>
+        <view class="{{curTabIndex == item.id?'active':''}}" data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view class='onbox_tabshow'>
+      <view class='tabbox' wx:for="{{orderData}}" wx:key="{{index}}" bindtap='godetails' data-index='{{item.g_id}}' wx:if="{{orderDataStatus == 1}}">
+        <image mode='widthFix' src='{{item.img_url}}' lazy-load='true'></image>
+        <view class="viewContent">
+          <view class='tabbox_title'>{{item.g_name}}</view>
+          <view class='tabbox_price'>¥{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='onbox_img' wx:if="{{orderDataStatus == 0}}">
+      <image src='http://wjdh.yccjb.com/%E6%90%9C%E7%B4%A2%E6%97%A0%E7%BB%93%E6%9E%9C@2x.png'></image>
+      <view>抱歉 还未发布相关作品哦~</view>
+    </view>
+  </scroll-view>
+</view>

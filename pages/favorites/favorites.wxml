@@ -1,0 +1,58 @@
+<view class="container" style="padding:0rpx">
+  <!-- 收藏夹有数据 -->
+  <view wx:if="{{listData.length>0}}">
+    <view class="favHead">
+      <text class="favCount">共<text style="color: #E51A24; margin: 0 6rpx;">{{listData.length}}</text>件商品</text>
+      <text class="favOption" catchtap='favEdit'>{{optionText}}</text>
+    </view>
+    <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad" bindscroll="scroll">
+      <checkbox-group bindchange="checkboxChange">
+        <view class="favLi" wx:for="{{listData}}" wx:key="item.id">
+          <view class="favCheck" wx:if="{{optionFlag}}">
+            <checkbox data-index="{{index}}" value="{{item.id}}" checked="{{item.checkState}}" />
+          </view>
+          <view class="favLiLeft" bindtap='godetailsList' data-item="{{item}}">
+            <image style='background:#f5f5f5;' mode='aspectFit' src="{{item.main_img}}"></image>
+          </view>
+          <view class="favLiRight" style="width:{{favLiRightWidth}}rpx;" bindtap='godetailsList' data-item="{{item}}">
+            <view class="favName">{{item.name}}</view>
+            <view class="favPrice">¥{{item.price}}</view>
+          </view>
+        </view>
+      </checkbox-group>
+    </scroll-view>
+    <view class="bottomOption" wx:if="{{bottomOptionFlag}}">
+      <checkbox class="allCheck" catchtap='checkAll' checked='{{checkAllFlag}}' />全选
+      <text catchtap='favCancel'>取消收藏</text>
+    </view>
+  </view>
+  <!-- 收藏夹没有数据 -->
+  <view class="nullContant" wx:if="{{listData.length<=0}}">
+    <view class="nullData">
+      <image src="http://wjdh.yccjb.com/favNull.png" mode="aspecFit"></image>
+      <view>您的收藏夹里没有内容哦</view>
+    </view>
+    <view class='Popular_recommendation'>
+      <view class='Popular_recommendation_title'>
+        <view class='xiantiao'></view>
+        <view class='Popular_recommendation_title_center'>
+          <image src='http://wjdh.yccjb.com/%E6%8E%A8%E8%8D%90@2x.png'></image>
+          <view>热门推荐</view>
+        </view>
+        <view class='xiantiao'></view>
+      </view>
+      <view class='onbox_tabshow'>
+        <view class='tabbox' wx:for="{{hotList}}" wx:key="{{index}}" data-id="{{item.g_id}}" bindtap='goProductDetails'>
+          <image mode='widthFix' src='{{item.img_url}}'></image>
+          <view class='tabbox_title'>{{item.painter_name}} | {{item.g_name}}</view>
+          <view class='tabbox_titletwo'>{{item.sub_title}}</view>
+          <view class='tabbox_price'>¥{{item.g_price}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

@@ -1,0 +1,36 @@
+<view class="container">
+  <scroll-view class="address_scroll">
+    <radio-group class="addresslist">
+      <view class="addressli" wx:for="{{addresslist.address_list}}" wx:key="{{index}}" catchtap='chooseReceivGoods' data-item="{{item}}">
+        <view class="li_title">{{item.name}}<text>{{item.phone}}</text>
+        </view>
+        <view class="li_address_details">
+          <view class='li_left'>
+            <image class="leftlocation" src='http://wjdh.yccjb.com/location.png'></image>
+          </view>
+          <view class='li_right'>{{item.address}}</view>
+        </view>
+        <view class='li_address_options'>
+          <view class='options_left height100' catchtap='listenerRadioCheck' data-id="{{item.id}}">
+            <radio value="1" checked='{{item.is_collect==1}}'/>设为默认地址
+          </view>
+          <view class='options_right height100'>
+            <view class='orblock height100' catchtap='updateAddress' data-item="{{item}}">
+              <image src="http://wjdh.yccjb.com/edit.png"></image>修改
+            </view>
+            <view class='orblock height100' catchtap='delteAddress' data-id="{{item.id}}">
+              <image src="http://wjdh.yccjb.com/del.png"></image>删除
+            </view>
+          </view>
+        </view>
+      </view>
+    </radio-group>
+  </scroll-view>
+  <view class="addnewaddress" bindtap='addnewaddress'>
+    <image src="http://wjdh.yccjb.com/addNew.png"></image>新增地址
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

@@ -1,0 +1,144 @@
+/* pages/perso_details/perso_details.wxss */
+page{
+  background: #f5f5f5;
+}
+.introduce_big_box{
+  width: 100%;
+  height: 100rpx;
+  background: #fff;
+}
+.introduce_box{
+  width: 100%;
+  height: auto;
+  background: #f5f5f5;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx 20rpx 20rpx;
+  position: relative;
+}
+.introduce_box_img{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: -151rpx;
+  margin-left: -71rpx;
+  overflow: hidden;
+  border: solid 2px #fff;
+}
+.introduce_box_img image{
+  width: 100%;
+  height: 100%;
+}
+.introduce_box_title{
+  width: 100%;
+  font-size: 15px;
+  color: #E51A24;
+  display: flex;
+  margin-top: 70rpx;
+  justify-content: center;
+}
+.introduce_box_msg{
+  font-size: 15px;
+  color: #666666;
+  margin-top: 20rpx;
+  line-height: 55rpx;
+}
+.works_box{
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.works_box_title{
+  width: 100%;
+  border-left: solid 6rpx #E51A24;
+  font-size: 15px;
+  color: #333333;
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
+}
+.works_box_list{
+  column-count: 2;
+  column-gap: 20rpx;
+  margin-top: 10rpx;
+}
+.works_box_list_li{
+  background-color: #fff;
+  break-inside: avoid; 
+  margin-top: 20rpx;
+}
+.works_box_list_li:nth-child(1){
+  margin-top: 0rpx;
+}
+.works_box_list_li image{
+  width: 100%;
+}
+.worl_text{
+  margin-top: 5rpx;
+}
+.worl_text text:nth-child(1){
+  font-size: 15px;
+  color: #666666;
+  /* font-weight: bold; */
+}
+.worl_text text:nth-child(2){
+  /* font-weight: bold; */
+  margin-left: 25rpx;
+  font-size: 17px;
+  color: #E51A24;
+}
+.works_box_mroe{
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.works_box_mroe button{
+  width: 186rpx;
+  height: 60rpx;
+  background: #E05B61;
+  font-size: 15px;
+  color: #FFFFFF;
+  font-weight: bold;
+  line-height: 60rpx;
+}
+.authorization_box{
+  width: 100%;
+  background: #f5f5f5;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.authorization_box image{
+  width: 526rpx;
+  height: 380rpx;
+  margin-top: 20rpx;
+}
+.Honor_text{
+  font-size: 13px;
+  color: #666666;
+  margin-top: 15rpx;
+  line-height: 40rpx;
+}
+.Comment_text_one{
+  font-size: 14px;
+  color: #151515;
+}
+.Comment_text_one text{
+  text-decoration:underline;
+}
+.Comment_text_two{
+  font-size: 13px;
+  color: #E51A24;
+}
+.works_box_title{
+  margin-bottom: 20rpx;
+}
+.backHomeImg{
+  width: 116rpx;
+  height: 116rpx;
+  position: fixed;
+  right: 18rpx;
+  top: 475rpx;
+}

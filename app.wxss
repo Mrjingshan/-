@@ -1,0 +1,119 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: "PingFangSC-Regular";
+  color: #555;
+  font-size: 20rpx;
+  background: #F5F5F5;
+}
+.bgFFF{
+  background: #FFFFFF;
+}
+.loginMsg {
+  width: 400rpx;
+  background: rgba(0, 0, 0, 0.70);
+  border-radius: 10rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  margin-top: -200rpx;
+  margin-left: -200rpx;
+}
+
+.loginMsg .icon {
+  width: 104rpx;
+  height: 104rpx;
+  display: block;
+  padding: 40rpx 148rpx 0;
+}
+
+.loginMsg .message {
+  display: block;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  line-height: 50rpx;
+  padding: 24rpx 40rpx 40rpx;
+}
+.loginMsg .tip {
+  display: block;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  line-height: 50rpx;
+  width: 90%;
+  margin: 32rpx auto 0;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #FFFFFF;
+}
+.loginMsg .btnLine{
+  display: block;
+  width: 90%;
+  padding: 32rpx 0;
+  text-align: center;
+  margin: 0 auto 0;
+}
+.loginMsg .btnLine text{
+  display: inline-block;
+  width: 136rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  border: 1rpx solid #FFFFFF;
+}
+.loginMsg .btnLine text.default{
+  margin-right: 40rpx;
+}
+.loginMsg .btnLine text.whiteStyle{
+  color: #E51A24;
+  background: #FFFFFF;
+}
+.spaceBar{
+  width: 100%;
+  height: 10rpx;
+  background: #F5F5F5;
+}
+.serviceContent{
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 50%;
+  left:648rpx;
+}
+.serviceContent image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.serviceContent>button{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 0;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 3rpx 5px 5px 0 rgba(153,153,153,0.5);
+}
+.serviceContent>button::after {
+  border: none;
+}
+.movableContent{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

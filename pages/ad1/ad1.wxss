@@ -1,0 +1,10 @@
+.container{
+  background: #ffffff;
+}
+image{
+  width: 100%;
+}
+image.fromStatus{
+  width: 100%;
+  padding-bottom: 25rpx;
+}

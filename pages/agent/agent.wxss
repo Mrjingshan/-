@@ -1,0 +1,270 @@
+page {
+  background: #f5f5f5;
+}
+::-webkit-scrollbar{
+  overflow: hidden;
+}
+.box_top {
+  width: 100%;
+  height: 642rpx;
+  position: relative;
+}
+
+.box_bg {
+  width: 100%;
+  height: 500rpx;
+}
+
+.box_bg image {
+  width: 100%;
+  height: 100%;
+}
+
+.box_show {
+  width: 710rpx;
+  height: 396rpx;
+  position: absolute;
+  top: 246rpx;
+  left: 20rpx;
+  background: #fff;
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+.box_show>scroll-view{
+  width: 100%;
+  height: 85%;
+}
+.boxContent {
+  width: 100%;
+  height: 246rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0);
+  overflow: hidden;
+}
+
+.boxContent image.headerImg {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 2rpx solid #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  float: left;
+  margin: 40rpx 0 0 50rpx;
+  display: inline-block;
+}
+
+.contentRight {
+  width: 500rpx;
+  height: 100%;
+  float: right;
+  margin-right: 50rpx;
+}
+
+.contentRight .name {
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 44rpx;
+  margin: 50rpx 0 0;
+}
+
+.contentRight .identity {
+  width: 100%;
+  margin: 14rpx 0 20rpx;
+}
+
+.contentRight .chooseTab {
+  width: 100%;
+  margin-top: 16rpx;
+  overflow: hidden;
+}
+
+.chooseTab .orderText {
+  display: inline-block;
+  float: left;
+  width: 50%;
+}
+
+.chooseTab .orderText .tab1 {
+  display: inline-block;
+  width: 130rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  opacity: 0.36;
+  background: #0f0f0f;
+  border-radius: 100rpx;
+  vertical-align: middle;
+}
+
+.chooseTab .orderText .tab2 {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 12rpx;
+  vertical-align: middle;
+}
+
+.identity text {
+  display: inline-block;
+  width: 130rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  opacity: 0.36;
+  background: #0f0f0f;
+  border-radius: 100rpx;
+}
+
+.controlText {
+  width: 48%;
+  float: right;
+  font-size: 32rpx;
+  color: #fff;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.controlText .icon {
+  width: 16rpx;
+  height: 32rpx;
+  vertical-align: middle;
+  margin: 8rpx 0 0 8rpx;
+}
+
+.box_show .title {
+  width: 100%;
+  font-size: 17px;
+  color: #333;
+  margin-top: 16rpx;
+  text-align: center;
+}
+
+.totalPrice {
+  width: 100%;
+  font-size: 42rpx;
+  color: #e51a24;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.lineBar {
+  width: 256rpx;
+  height: 4rpx;
+  background: #e51a24;
+  margin: 26rpx auto 26rpx;
+}
+
+.bars {
+  display: flex;
+}
+
+.bars .barsItem {
+  flex: 1;
+  text-align: center;
+  border-right: 1rpx solid #e6e6e6;
+}
+
+.bars .barsItem:last-child {
+  border-right: none;
+}
+
+.barsItem .title {
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #666;
+}
+
+.barsItem .count {
+  width: 100%;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 12rpx;
+}
+
+.imageItem {
+  width: 710rpx;
+  height: 128rpx;
+  margin: 0 auto;
+}
+
+.imageItem image {
+  width: 100%;
+  height: 100%;
+}
+
+.itemView {
+  margin: 40rpx auto 0;
+  background: #fff;
+  width: 710rpx;
+}
+
+.itemView>view {
+  width: 650rpx;
+  height: 87rpx;
+  line-height: 87rpx;
+  text-align: center;
+  overflow: hidden;
+  margin: 0 auto 0;
+  vertical-align: middle;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.itemView>view:last-child{
+  border-bottom: none;
+}
+.itemView>view>text {
+  float: left;
+  font-size: 34rpx;
+  color: #000;
+}
+
+.itemView>view>image {
+  width: 16rpx;
+  height: 32rpx;
+  float: right;
+  margin-top: 27rpx;
+  vertical-align: middle;
+}
+.scrollItem{
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+.barsNav{
+  width: 254rpx;
+  height: 20rpx;
+  margin: 30rpx auto 0;
+  display: flex;
+  background: #FFF;
+}
+.barsNavItem{
+  height: 8rpx;
+  flex: 1;
+  background: #E7E7E7;
+}
+.barsNavItem.active{
+  background: #E51A24;
+}
+.totalPrice>text{
+  display: inline-block;
+  width: 132rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666666;
+  border: 1rpx solid #666666;
+  border-radius: 87rpx;
+  margin-left: 30rpx;
+  position: absolute;
+  right: 128rpx;
+  top: 10rpx;
+}

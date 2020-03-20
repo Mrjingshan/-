@@ -1,0 +1,26 @@
+<view class='sort_box'>
+    <view class='search_box' bindtap='goSearch'>
+      <view class='search_box_block'>
+        <view class='search_box_img'>
+          <image src='http://wjdh.yccjb.com/%E6%90%9C%E7%B4%A21.png'></image>
+        </view>
+        <view class='search_btn'>搜索</view>
+        <view class='search_box_img'></view>
+      </view>
+    </view>
+    <view class='Nav_box' style="max-height:{{navHeight}}px; overflow-y: scroll;">
+      <view class='{{currIndex==item.id?"Nav_box_change":"Nav_box_li"}}' wx:for="{{navData}}" wx:key="{{index}}" bindtap='navChange' data-index="{{item.id}}">
+        {{item.name}}
+      </view>
+    </view>
+    <view class='right_box'>
+      <view class='right_box_both'></view>
+      <view class='sort_list'>
+        <view class='sort_list_li' wx:for="{{listData}}" wx:key="{{index}}" bindtap='godetailsList' data-index="{{item.g_id}}">
+          <image mode="widthFix" src='{{item.img_url}}'></image>
+          <view class='sort_list_li_name'>{{item.g_name}}</view>
+          <view class='sort_list_li_price'><text>¥</text><text>{{item.price}}</text></view>
+        </view>
+      </view>
+    </view>
+</view>

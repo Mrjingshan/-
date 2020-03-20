@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="bgBox">
+    <image src='http://wjdh.yccjb.com/codeBgNew.png'></image>
+  </view>
+  <view class="contentBox">
+    <view class='headBox'>
+      <view class='headImg'>
+        <image src='{{marketManUrl}}'></image>
+      </view>
+      <view class='headText'>
+        <view class="headTextSub">{{marketManName}}</view>
+        <view>邀请你成为艺术代理商</view>
+      </view>
+    </view>
+    <view class="headTitle">加入我家的画</view>
+    <view class='headAds'>
+      <view class='headAds1'>
+        <image src='http://wjdh.yccjb.com/rightShape.png'></image>朋友购买，您即可获得高额佣金，在线轻松提现！
+      </view>
+      <view class='headAds2'>我家的画是中国领先的艺术品交易平台，旨在帮助三亿中国家庭精选书画传家宝，让艺术走进家庭使家庭更美好，是我们永恒的使命。</view>
+    </view>
+    <view class="keyText">{{keyText}}</view>
+    <view class="keyBtn" catchtap='keyComes' wx:if="{{btnStatus==0}}">一键成为艺术代理商</view>
+    <button class="keyBtn" open-type='getUserInfo' bindgetuserinfo="getUserInfo" wx:if="{{btnStatus==1}}">一键成为艺术代理商</button>
+    <button class="keyBtn" open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber" wx:if="{{btnStatus==2}}">一键成为艺术代理商</button>
+    <view class="bottomContent">
+      <image src='http://wjdh.yccjb.com/logo.png'></image>开启轻松创业，你也有机会年薪百万~
+    </view>
+    <image class="adLogo" wx:if="{{adLogoStatus==1}}" src='/images/adLogo.png'></image>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

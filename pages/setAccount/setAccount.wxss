@@ -1,0 +1,53 @@
+.container {
+  background: #fff;
+}
+
+.cells {
+  width: 100%;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.cell {
+  width: 730rpx;
+  margin-left: 20rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.cell>text {
+  width: 160rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.cell>input {
+  width: 568rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  padding: 0;
+  margin: 0;
+  float: right;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.saveBtn {
+  width: 620rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  background: #e51a24;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 36rpx;
+  color: #fff;
+  margin: 170rpx auto 0;
+}
+.view_msg{
+  width: 620rpx;
+  margin: 26rpx auto 0;
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 40rpx;
+}

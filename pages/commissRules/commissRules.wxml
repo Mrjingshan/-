@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="content">
+    <view class="head">
+      <view class="item">销售类型</view>
+      <view class="item">收益</view>
+    </view>
+    <view class="head">
+      <view class="item">分销</view>
+      <view class="item">{{rulesObj.under_rate}}%</view>
+    </view>
+    <view class="rulesTip">温馨提示：好友成功下单付款后，您即可获得佣金，订单签收8天后佣金即可解冻提现。</view>
+  </view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

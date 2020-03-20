@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="head">
+    <view>我的团队 共<text>{{partnerList.length}}</text>人</view>
+  </view>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;">
+    <view class="teamLi" wx:for="{{partnerList}}" wx:key="{{item.index}}">
+      <view class="teamLiLeft">
+        <image src="{{item.wx_img}}" mode="aspecFit"></image>
+        <view class="info">
+          <view class="tip"><text>艺术代理商</text></view>
+          <view class="name">昵称：{{item.name}}</view>
+        </view>
+      </view>
+      <view class="teamLiRight">
+        <view style="margin-top:30rpx;">成为营销员日期:{{item.create_time}}</view>
+        <view style='margin-top:30rpx;'>累计销售额:<text>{{item.sale_amount}}元</text></view>
+        <view>累计佣金:<text>{{item.grand_amount}}元</text></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="loginMsg" wx:if="{{tipstate}}">
+  <image class="icon" src="{{tipicon}}"></image>
+  <text class="message">{{tipmsg}}</text>
+</view>

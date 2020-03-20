@@ -1,0 +1,133 @@
+page{
+  background: #f5f5f5;
+}
+.search_box{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #f5f5f5;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.search_box_block{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  height: 56rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.search_box_img{
+  width: 56rpx;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10rpx;
+  margin-left: 10rpx;
+}
+.search_box_img image{
+  width: 100%;
+  height: 100%;
+}
+.search_btn{
+  font-size: 16px;
+  color: #B2B2B2;
+}
+.Nav_box{
+  width: 130rpx;
+  position: fixed;
+  top: 96rpx;
+  left: 0rpx;
+}
+.Nav_box_li{
+  width: 130rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: solid 1px #D4D4D4;
+  border-bottom: none;
+  font-size: 13px;
+  color: #000;
+}
+.Nav_box_li:last-child{
+  border-bottom: solid 1px #D4D4D4;
+}
+.Nav_box_change{
+  width: 130rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F5F5F5;
+  font-size: 13px;
+  color: #E51A24;
+  border-left: solid 6rpx #E51A24;
+  border-top: solid 1px #D4D4D4;
+}
+.Nav_box_change:last-child{
+  border-bottom: solid 1px #D4D4D4;
+}
+.right_box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 76rpx;
+}
+.right_box_both{
+  width: 130rpx;
+  visibility: hidden;
+}
+.sort_list{
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx 20rpx 20rpx;
+  column-count: 2;
+  column-gap: 20rpx;
+  margin-top: 20rpx;
+}
+.sort_list_li{
+  background-color: #fff;
+  break-inside: avoid;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  /* overflow: hidden; */
+}
+.sort_list_li:nth-child(1){
+  margin-top: 0rpx;
+}
+.sort_list_li image{
+  width: 100%;
+}
+.sort_list_li_name{
+  font-size: 15px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
+  margin-top: -2rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.sort_list_li_price{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
+  margin-top: 0rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  color:#E51A24;
+  font-size: 17px;
+}
+.sort_list_li_price text:nth-child(1){
+  /* color: #151515; */
+}
+.sort_list_li_price text:nth-child(2){
+  /* color: #151515; */
+}

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="content">
+    <view class="head">
+      <view class="item">销售类型</view>
+      <view class="itemSub">艺术代理商团队佣金</view>
+      <view class="itemSub">艺术合伙人佣金</view>
+    </view>
+    <view class="head">
+      <view class="item">直接销售</view>
+      <view class="itemSub">/</view>
+      <view class="itemSub">{{rulesObj.rate}}%</view>
+    </view>
+    <view class="head">
+      <view class="item">营销团队</view>
+      <view class="itemSub">{{rulesObj.under_rate}}%</view>
+      <view class="itemSub">{{rulesObj.two_rate}}%</view>
+    </view>
+  </view>
+</view>
